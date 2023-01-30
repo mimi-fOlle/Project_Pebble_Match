@@ -4,16 +4,22 @@ body {
      color: #222;
      font-weight: 400;
      font-family: montserrat;
-     background-image: url(../images/signup-bg.jpg);
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center center;
      padding: 50px 0;
+     background-color: #FF62C7;
+
+ }
+ .container {
+     background-color: white;
+     width: 40rem;
+     border-radius: 10px;
  }
  .form-group {
      overflow: hidden;
      margin-bottom: 20px;
-     width: 50%;
+     width: 30rem;
  }
  .loginhere {
      color: #555;
