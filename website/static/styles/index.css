@@ -7,6 +7,14 @@ img {
      width:  100%;
 }
 
+@font-face {
+     font-family: "CustomFont";
+     src: url("/fonts/CustomFont/CustomFont.woff");
+     src: url("/fonts/CustomFont/CustomFont.woff") format("woff"),
+     url("/fonts/CustomFont/CustomFont.txt") format("opentype"),
+     url("CustomFont.svg#filename") format("svg");
+     }
+
 .container_top {
      display: flex;
      justify-content: space-between;
@@ -24,7 +32,9 @@ margin-top: 20px;
 padding: 20px;
 background-size: cover;
 background-image: url(/Project_Pebble_Match/website/static/images/background.jpg);
-font-family: sans-serif;
+font-family: 'CustomFont', sans-serif;
+background-attachment: fixed;
+color: #FF62C7;
 }
 
 .nav_bar_menu * {
@@ -37,3 +47,53 @@ margin: 20px;
 color: rgb(255, 0, 187);
 text-decoration: none;
 }
+
+/* full page */
+#fullpage {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 100%;
+
+}
+/* section 0 */
+#section0 {
+     color: white;
+     margin-top: 10em;
+}
+.intro {
+     display: flex;
+     flex-direction: column;
+     /* justify-content: center; */
+     align-items: center;
+ }
+
+ /* section 1 */
+ .btn {
+     color: #FF62C7;
+     font-size: 30px;
+     background: white;
+     border-radius: 10px;
+     box-shadow: 2px 2px black; 
+ }
+
+ div#section1 {
+     display: flex;
+     justify-content: center;
+     margin-top: 40px;
+ }
+
+ /*section2  */
+ .penguin {
+     width: 400px;
+ }
+ div#section2 {
+     display: flex;
+     justify-content: center;
+ }
+ .penguin_photo {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin-top: 40px;
+ }
