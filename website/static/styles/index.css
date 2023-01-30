@@ -20,15 +20,13 @@ img {
      justify-content: space-between;
 }
 .logo_name {
-     width:  50px;
-     height: 50px;
+     width: 200px;
 }
 
 /* Naviga bar */
 body 
 {
 height: 100vh;
-margin-top: 20px;
 padding: 20px;
 background-size: cover;
 background-image: url(/Project_Pebble_Match/website/static/images/background.jpg);
@@ -37,16 +35,27 @@ background-attachment: fixed;
 color: #FF62C7;
 }
 
+.nav_bar_menu {
+     display: flex;
+     align-items: center;
+     /* justify-content: center; */
+     /* flex-direction: column; */
+ }
 .nav_bar_menu * {
 display: inline;
 }
 .nav_bar_menu li {
-margin: 20px;
+margin: 10px;
 }
 .nav_bar_menu li a {
-color: rgb(255, 0, 187);
-text-decoration: none;
-}
+     color: rgb(255, 0, 187);
+     text-decoration: none;
+     border: solid 1px black;
+     border-radius: 4px;
+     background-color: white;
+     padding: 5px;
+     box-shadow: 1px 1px black;
+ }
 
 /* full page */
 #fullpage {
