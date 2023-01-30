@@ -1,0 +1,107 @@
+*{margin: 0; padding: 0;} 
+/* login page */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* logo bar */
+img {
+     width:  100%;
+}
+
+@font-face {
+     font-family: "CustomFont";
+     src: url("CustomFont/CustomFont.woff") format("woff"),
+     url("CustomFont/CustomFont.woff") format("opentype"),
+     url("CustomFont.svg#filename") format("svg");
+     }
+
+.container_top {
+     display: flex;
+     justify-content: space-between;
+}
+.logo_name {
+     width: 200px;
+}
+
+/* Naviga bar */
+body 
+{
+height: 100vh;
+padding: 20px;
+background-size: cover;
+background-image: url(/Project_Pebble_Match/website/static/images/background.jpg);
+font-family: 'CustomFont', sans-serif;
+background-attachment: fixed;
+color: #FF62C7;
+}
+
+.nav_bar_menu {
+     display: flex;
+     align-items: center;
+     /* justify-content: center; */
+     /* flex-direction: column; */
+ }
+.nav_bar_menu * {
+display: inline;
+}
+.nav_bar_menu li {
+margin: 10px;
+}
+.nav_bar_menu li a {
+     color: rgb(255, 0, 187);
+     text-decoration: none;
+     border: solid 1px black;
+     border-radius: 4px;
+     background-color: white;
+     padding: 5px;
+     box-shadow: 1px 1px black;
+ }
+
+/* full page */
+#fullpage {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     width: 100%;
+
+}
+/* section 0 */
+#section0 {
+     color: white;
+     margin-top: 10em;
+}
+.intro {
+     display: flex;
+     flex-direction: column;
+     /* justify-content: center; */
+     align-items: center;
+ }
+
+ /* section 1 */
+ .btn {
+     color: #FF62C7;
+     font-size: 30px;
+     background: white;
+     border-radius: 10px;
+     box-shadow: 2px 2px black; 
+ }
+
+ div#section1 {
+     display: flex;
+     justify-content: center;
+     margin-top: 40px;
+ }
+
+ /*section2  */
+ .penguin {
+     width: 400px;
+ }
+ div#section2 {
+     display: flex;
+     justify-content: center;
+ }
+ .penguin_photo {
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     margin-top: 40px;
+ }
