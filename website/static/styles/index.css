@@ -9,9 +9,8 @@ img {
 
 @font-face {
      font-family: "CustomFont";
-     src: url("/fonts/CustomFont/CustomFont.woff");
-     src: url("/fonts/CustomFont/CustomFont.woff") format("woff"),
-     url("/fonts/CustomFont/CustomFont.txt") format("opentype"),
+     src: url("CustomFont/CustomFont.woff") format("woff"),
+     url("CustomFont/CustomFont.woff") format("opentype"),
      url("CustomFont.svg#filename") format("svg");
      }
 
