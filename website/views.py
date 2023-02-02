@@ -10,3 +10,7 @@ def home():
 @views.route('/login.html')
 def login():
     return render_template("login.html")
+
+@views.route('/signup.html')
+def sign_up():
+    return render_template("signup.html")
