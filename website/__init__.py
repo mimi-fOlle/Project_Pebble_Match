@@ -3,9 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
 
-
 db = SQLAlchemy()
-DB_NAME = 'database.db'
+DB_NAME = "database.db"
 
 
 def create_app():
