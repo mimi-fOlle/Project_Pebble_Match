@@ -28,7 +28,7 @@ body
 height: 100vh;
 padding: 20px;
 background-size: cover;
-background-image: url(/Project_Pebble_Match/website/static/images/background.jpg);
+background-image: url(../images/background.jpg);
 font-family: 'CustomFont', sans-serif;
 background-attachment: fixed;
 color: #FF62C7;
@@ -45,8 +45,9 @@ display: inline;
 }
 .nav_bar_menu li {
 margin: 10px;
+display: inline-block;
 }
-.nav_bar_menu li a {
+a.button {
      color: rgb(255, 0, 187);
      text-decoration: none;
      border: solid 1px black;
@@ -54,6 +55,7 @@ margin: 10px;
      background-color: white;
      padding: 5px;
      box-shadow: 1px 1px black;
+     transition: 0.4s;
  }
 
 /* full page */
@@ -104,4 +106,22 @@ margin: 10px;
      justify-content: center;
      flex-direction: column;
      margin-top: 40px;
+ }
+
+ .scale_button {
+     font-size: 20px;
+ }
+
+.container {
+     position: relative;
+}
+ .card {
+     position: absolute;
+     top: 50px;
+     opacity: 0;
+     visibility: hidden;
+ }
+ .card_show {
+     opacity: 1;
+     visibility: visible;
  }

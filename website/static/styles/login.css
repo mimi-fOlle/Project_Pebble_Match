@@ -4,13 +4,11 @@
 
 /* BASIC */
 
-html {
-  background-color: #FF62C7 ;
-}
 
 body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
+  background-color: #FF62C7;
 }
 
 a {
