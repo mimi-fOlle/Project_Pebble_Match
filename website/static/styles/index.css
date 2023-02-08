@@ -76,7 +76,7 @@ a.button {
  }
 
  .penguin {
-     width: 200px;
+     width: 20em;
  }
  div#section2 {
      display: flex;
@@ -95,7 +95,6 @@ a.button {
      display: flex;
      justify-content: center;
      flex-direction: column;
-     margin-top: 40px;
  }
 
  .scale_button {
