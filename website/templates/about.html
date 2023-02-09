@@ -15,14 +15,14 @@
      <link rel="stylesheet" href="Assets/css/brands.css">
      <link rel="stylesheet" href="Assets/css/solid.css">
 
-     <link rel="stylesheet" href="../styles/index.css">
+     <link rel="stylesheet" href="../static/styles/style.css">
 </head>
 
 <body>
      <header>
           <div class="container_top">
                <div class="logo_name">
-                    <img class="images_logo" src="../images/logo.png" alt="logo-bebbe">
+                    <img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">
                </div>
                <div class="nav_bar_menu">
                     <nav>
@@ -46,19 +46,21 @@
      </header>
      <div class="container">
           <div class="section1 row">
-               <button class="btn btn-ouline button-style col-xs-4">
-                    <p>WHAT IS PEBBLE MATCH?</p>
-               </button>
-               <button class="btn btn-ouline button-style col-xs-4">
-                    <p>
-                         WHY PEBBLE
-                    </p>
-               </button>
-               <button class="btn btn-ouline button-style col-xs-4">
-                    <p>
-                         HOW TO USE PEBBLE MATCH?
-                    </p>
-               </button>
+               <div class="col-sm-4">
+                    <button class="btn btn_about button-style " type="button" data-show="what">
+                         <p>WHAT IS PEBBLE MATCH?</p>
+                    </button>
+               </div>
+               <div class="col-sm-4">
+                    <button class="btn btn_about button-style " type="button" data-show="why">
+                         <p>WHY PEBBLE? </p>
+                    </button>
+               </div>
+               <div class="col-sm-4">
+                    <button class="btn btn_about button-style " type="button" data-show="how">
+                         <p>HOW TO USE PEBBLE MATCH? </p>
+                    </button>
+               </div>
           </div>
           <div class="row">
                <div class="hr-underline col-6"></div>
@@ -66,7 +68,7 @@
           </div>
           <div id="fullpage" class="container">
                <div class="section2 fp-auto-height" id="section2">
-                    <div class="about-text">
+                    <div class="content-to-show" , id="about">
                          <p>
                               Love is not always at first sight. <br>
                               Love can be blind, <br>
@@ -80,9 +82,40 @@
 
                          </p>
                     </div>
-                    <div class="penguin_photo">
-                         <img class="penguin" src="../static/images/" alt="">
+                    <div class="content-to-show" id="what">
+                         <p>
+                              Pebble Match is a matchmaker website. <br>
+                              There is no judgment on people’s looks. <br>
+                              Pebble Match matches people by a questionnaire on habits and values, <br>
+                              Which is a fundamental (albeit often overlooked) element in a relationship. <br>
+                         </p>
+
+
                     </div>
+                    <div class="content-to-show" id="why">
+                         <p>
+                              Have you noticed that there are some little penguins waddling around on the site? <br>
+                              Yes! They have a story too! <br>
+                              For some species of penguins (Adelie, Chinstrap and Gentoo), <br>
+                              a male penguin searches for the prettier pebble to propose to the penguin of its life.
+                              <br>
+                              (after all, humans also propose with a diamond) br
+                              If the other penguin likes it, it will bring it back to its nest, <br>
+                              Then the two love birds can build up their pebble nest to raise their family! <br>
+
+                         </p>
+
+                    </div>
+                    <div class="content-to-show" id="how">
+                         <ol>
+                              <li>You must sign up to create an account, and <b> “Login”</b>.</li>
+                              <li>In your personal page, click “Quiz” to start.</li>
+                              <li>Once you finish the quiz, click on “Match”.</li>
+                              <li>Your top three matches will show up on the page.</li>
+                         </ol>
+
+                    </div>
+
                </div>
           </div>
      </div>

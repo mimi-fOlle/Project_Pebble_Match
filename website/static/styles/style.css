@@ -65,10 +65,15 @@ body {
      box-shadow: 0 0 5px  rgb(126, 116, 116) inset;
      transition: 0.4s;
 
-     font-size: 20px;
+     font-size: 1.2rem;
      font-family: 'CustomFont', sans-serif;
+     transition: 0.4s;
 
-     margin-right: 20px;
+     margin-right: 1rem;
+     width: 100%;
+     height: 4.5rem;
+
+     cursor: pointer;
 
 }
 
@@ -95,16 +100,21 @@ div#section2 {
      display: flex;
      justify-content: center;
      align-items: center;
-     flex-flow: column;
+     text-align: center;
+
 
      border: 1px solid white;
      border-radius: 30px;
 
      width: 50em;
+     height: 20rem;
+
      margin: 50px 0 100px 0;
      padding: 20px;
      background-color: #ca9fdb5e;
      box-shadow: 0em 0.4em 0.4em 0.4em #ffffff94;
+
+     position: relative;
 }
 
 .penguin_photo {
@@ -117,9 +127,9 @@ div#section2 {
      font-size: 30px;
 }
 
-.container {
+/* .container {
      position: relative;
-}
+} */
 
 
 /* footer */
@@ -137,6 +147,7 @@ div#section2 {
      align-items: end;
      justify-content: center;
 
+
  }
 
  .hr-underline {
@@ -149,11 +160,26 @@ div#section2 {
      background-color: #fa03f15e;
  }
 
- .about-text {
-     height: fit-content;
+ .content-to-show {
+
+     position: absolute;
+
+
      font-size: 20px;
-     text-align: center;
+    
      line-height: 2rem;
+
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      color: white;
+
+
+     opacity: 0;
+     visibility: hidden; 
+
+ }
+
+
+ .about-to-show {
+     opacity: 1;
+     visibility: visible;
  }
