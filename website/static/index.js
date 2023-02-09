@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-     let button_menu = document.getElementsByClassName('button');
+     let button_menu = document.getElementsByClassName('button-menu');
      // change front size button 
      for (let index = 0; index < button_menu.length; index++) {
           button_menu[index].onclick = function() {
