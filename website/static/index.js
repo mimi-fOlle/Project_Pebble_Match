@@ -22,9 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let getIdParagrap = document.getElementById(getDatatext);
 /*         console.log(getIdParagrap); */
         
-    /*     for (let l = 0; l < show_text.length; l++) {
+       for (let l = 0; l < show_text.length; l++) {
           show_text[l].classList.remove('about-to-show');
-        } */
+          show_text[l].classList.remove('intro-about')
+        } 
         getIdParagrap.classList.toggle('about-to-show');
 
       };

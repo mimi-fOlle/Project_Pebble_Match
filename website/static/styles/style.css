@@ -61,7 +61,7 @@ body {
      border: solid 1px black;
      border-radius: 10px;
      background-color: white;
-     padding: 15px;
+/*      padding: 15px; */
      box-shadow: 0 0 5px  rgb(126, 116, 116) inset;
      transition: 0.4s;
 
@@ -179,7 +179,11 @@ div#section2 {
  }
 
 
- .about-to-show {
+ .about-to-show, .intro-about {
      opacity: 1;
      visibility: visible;
+ }
+
+ .icon-chim {
+     width: 10rem;
  }
