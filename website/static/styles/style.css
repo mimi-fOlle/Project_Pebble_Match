@@ -8,6 +8,7 @@
 
      --color-text-rose: rgb(255, 0, 187);
      --color-text-rose-opacity:  rgba(255, 0, 187, 0.21);
+     --color-box-violet: #ca9fdb5e;
 }
 
 /* login page */
@@ -17,7 +18,10 @@
 img {
      width: 100%;
 }
-
+a {
+     text-decoration: none;
+     color: var(--color-text-rose);
+}
 @font-face {
      font-family: "CustomFont";
      src: url("../styles/CustomFont/CustomFont.woff") format("woff"),
@@ -89,7 +93,6 @@ body {
      display: flex;
      flex-direction: column;
      align-items: center;
-
 }
 
 /*section2  */
@@ -103,7 +106,8 @@ body {
      width: 20em;
 }
 
-div#section2 {
+.section2 {
+     position: relative;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -115,14 +119,14 @@ div#section2 {
      border-radius: 30px;
 
      width: 50em;
-     height: 20rem;
+     height: 30rem;
 
      margin: 50px 0 100px 0;
      padding: 20px;
      background-color: #ca9fdb5e;
      box-shadow: 0em 0.4em 0.4em 0.4em #ffffff94;
 
-     position: relative;
+     
 }
 
 .penguin_photo {
@@ -134,10 +138,6 @@ div#section2 {
 .scale_button {
      font-size: 30px;
 }
-
-/* .container {
-     position: relative;
-} */
 
 
 /* footer */
@@ -162,7 +162,7 @@ div#section2 {
 
      margin-top: 10px;
      height: 4px;
-     background-color: #fa03f15e;
+     background-color: var(--color-box-violet);
  }
 
  .content-to-show {
@@ -176,6 +176,8 @@ div#section2 {
 
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      color: white;
+
+     transition: 0.4s;
 
 
      opacity: 0;
@@ -202,5 +204,5 @@ div#section2 {
           margin-top: 1rem;
           font-family: var(--font-family-custom);
           text-align: center;
-          color: white
+          color: var(--color-text-rose)
      }

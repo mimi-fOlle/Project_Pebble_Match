@@ -59,10 +59,10 @@
                <h3>If you do not have an account, please sign up first.</h3>
           </section>
           <section id="fullpage" class="container container-signup">
-               <div class="main">
+               <section class="container ct-signup">
                     <section class="signup">
                          <div class="container container-signup">
-                              <div class="signup-content">
+                              <div class="signup-content" id="signup-content">
                                    <form method="POST" id="signup-form" class="signup-form">
                                         <h2 class="form-title">Sign Up</h2>
                                         <div class="form-group">
@@ -98,6 +98,7 @@
                                              <input type="submit" name="submit" id="submit" class="form-submit"
                                                   value="Submit" />
                                         </div>
+
                                    </form>
                                    <p class="loginhere">
                                         Have already an account ? <a href="../templates/login.html"
@@ -106,8 +107,45 @@
                               </div>
                          </div>
                     </section>
-               </div>
+               </section>
+               <section class=" fp-auto-height ct-accept" id="ct-accept">
+                    <div class=" intro-about rule-style" , id="rule-web">
+                         <p>
+                              Before you can use the Pebble Match, you will need to register for an account <b><u><i>(“Login”).</i></u></b>
+                              In order to create an account you must: <br>
+                         <ol>
+                              <li>
+                                   be at least <u><b style = "color:red">18 years</b> old or the age of majority to legally</u> enter into a contract
+                                   under the laws of your home country; and
 
+                              </li>
+                              <li>
+                                   be legally permitted to use the Pebble Match platform by the laws of your home
+                                   country.
+
+                              </li>
+                         </ol>
+
+
+                         We cannot allow you to use another person’s account or to share your account with any other
+                         person without permission. <br>
+
+                         We decline any responsibility or liability in the usage of this platform and its related data.
+
+                         </p>
+                    </div>
+                    <div class="container form-rule">
+                         <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="I agree the rules" id="flexCheckDefault">
+                              <label class = "form-check-label" for="flexCheckDefault">
+                                I agree the rules
+                              </label>
+                         </div>
+                              <div class="form-group" id="show_signup" >
+                                    <a class =" button-style button-accept" style="width: fit-content;">Sign Up</a>
+                              </div>
+                    </div>
+               </section>
           </section>
      </div>
      <footer>
@@ -115,6 +153,7 @@
           <p class="footer">Project Portfolio ToNoeMia</p>
      </footer>
      <script type="text/javascript" src="../static/index.js"></script>
+     <script type="text/javascript" src="../static/signup.js"></script>
 </body>
 
 </html>
