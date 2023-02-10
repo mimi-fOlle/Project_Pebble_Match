@@ -2,6 +2,13 @@
      margin: 0;
      padding: 0;
 }
+:root {
+     --font-family-custom:'CustomFont', sans-serif;
+
+
+     --color-text-rose: rgb(255, 0, 187);
+     --color-text-rose-opacity:  rgba(255, 0, 187, 0.21);
+}
 
 /* login page */
 @import url('https://fonts.googleapis.com/css?family=Poppins');
@@ -35,7 +42,7 @@ body {
      height: 100vh;
      padding: 20px;
      background-size: cover;
-     background-image: url(../images/background.jpg);
+     background-image: url(../images/temporaire.jpg);
      background-attachment: fixed;
 }
 
@@ -56,12 +63,12 @@ body {
 }
 
 .button-style {
-     color: rgb(255, 0, 187);
+     color: var(--color-text-rose);
      text-decoration: none;
      border: solid 1px black;
      border-radius: 10px;
      background-color: white;
-/*      padding: 15px; */
+     padding: 15px;
      box-shadow: 0 0 5px  rgb(126, 116, 116) inset;
      transition: 0.4s;
 
@@ -101,6 +108,7 @@ div#section2 {
      justify-content: center;
      align-items: center;
      text-align: center;
+     flex-direction: column;
 
 
      border: 1px solid white;
@@ -151,11 +159,8 @@ div#section2 {
  }
 
  .hr-underline {
-     content: "";
 
      margin-top: 10px;
-     position: absolute;
-     width: 100%;
      height: 4px;
      background-color: #fa03f15e;
  }
@@ -183,7 +188,19 @@ div#section2 {
      opacity: 1;
      visibility: visible;
  }
-
  .icon-chim {
-     width: 10rem;
- }
+      width: 10rem;
+     }
+     /* section 3 - login page */
+     .big-text {
+          margin-top: 5rem;
+          font-family: var(--font-family-custom);
+          text-align: center;
+          color: var(--color-text-rose);
+     }
+     .second-text {
+          margin-top: 1rem;
+          font-family: var(--font-family-custom);
+          text-align: center;
+          color: white
+     }

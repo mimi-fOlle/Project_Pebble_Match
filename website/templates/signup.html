@@ -1,60 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-     <title> sign up </title>
+
+<head>
+     <title> Sign Up </title>
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name="description" content="fullPage fixed full-screen backgrounds." />
      <!-- bootstrap -->
-     <script type="text/javascript" src="../templates/vendor/js/bootstrap.js"></script>
-     <link href="../templates/vendor/js/bootstrap.js" rel="stylesheet">
-   
+     <script type="text/javascript" src="./vendor/js/bootstrap.js"></script>
+     <link href="./vendor/css/bootstrap.css" rel="stylesheet">
+
      <!-- Font awesome -->
      <link rel="stylesheet" href="Assets/css/fontawesome.css">
      <link rel="stylesheet" href="Assets/css/brands.css">
      <link rel="stylesheet" href="Assets/css/solid.css">
-   
+
+     <link rel="stylesheet" href="../static/styles/style.css">
+     <link rel="stylesheet" href="../static/styles/login.css">
      <link rel="stylesheet" href="../static/styles/signup.css">
 </head>
-<body >
-     <div class="main">
-          <section class="signup">     
-          <div class="container">
-          <div class="signup-content">
-          <form method="POST" id="signup-form" class="signup-form">
-          <img src="../static/images/ceur-logo.png" alt="">
-          <h2 class="form-title">Sign Up</h2>
-          <div class="form-group">
-          <p>Email Address</p>
-          <input type="email" class="form-input" name="email" id="email" placeholder="Enter Email" />
+
+<body>
+     <header>
+          <div class="container container_top">
+               <section class="logo_name">
+                    <img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">
+               </section>
+               <section class="nav_bar_menu">
+                    <nav>
+                         <ul>
+                              <li>
+                                   <a href="../templates/index.html" class="button-menu button-style" data-show="home">
+                                        Home </a>
+                              </li>
+                              <li>
+                                   <a href="../templates/about.html" class="button-menu button-style" data-show="about">
+                                        About </a>
+                              </li>
+                              <li>
+                                   <a href="#" class="button-menu button-style scale_button"
+                                        data-show="login">SignUp</a>
+                              </li>
+                         </ul>
+                    </nav>
+               </section>
           </div>
-          <div class="form-group">
-               <p>Pseudo</p>
-               <input type="text" class="form-input" name="pseudo" id="pseudo" placeholder="pseudo">
-               </div>
-          <div class="form-group">
-               <p>Password</p>
-          <input type="text" class="form-input" name="password" id="password" placeholder="Password" />
-          <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-          </div>
-          <div class="form-group">
-          <input type="password" class="form-input" name="re_password"id="re_password" placeholder="Confirm password">
-          </div>
-          <div class="form-group">
-          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term">
-          <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in <a href="#" class="term-service">Terms of service</a>
-          </label>
-          </div>
-          <div class="form-group">
-          <input type="submit" name="submit" id="submit" class="form-submit" value="Submit" />
-          </div>
-          </form>
-          <p class="loginhere">
-          Have already an account ? <a href="../templates/login.html" class="loginhere-link">Login here</a>
-          </p>
-          </div>
-          </div>
+     </header>
+     <div class="container">
+          <section class="big-text row">
+               <h1>Welcome to Pebble Match</h1>
           </section>
-          </div>
+          <section class="row">
+               <div class=" col-2"></div>
+               <div class="hr-underline col-8"></div>
+               <div class=" col-2"></div>
+          </section>
+          <section class="second-text row">
+               <h3>If you do not have an account, please sign up first.</h3>
+          </section>
+          <section id="fullpage" class="container container-signup">
+               <div class="main">
+                    <section class="signup">
+                         <div class="container container-signup">
+                              <div class="signup-content">
+                                   <form method="POST" id="signup-form" class="signup-form">
+                                        <h2 class="form-title">Sign Up</h2>
+                                        <div class="form-group">
+                                             <p>Email Address</p>
+                                             <input type="email" class="form-input" name="email" id="email"
+                                                  placeholder="Enter Email" />
+                                        </div>
+                                        <div class="form-group">
+                                             <p>Pseudo</p>
+                                             <input type="text" class="form-input" name="pseudo" id="pseudo"
+                                                  placeholder="pseudo">
+                                        </div>
+                                        <div class="form-group">
+                                             <p>Password</p>
+                                             <input type="text" class="form-input" name="password" id="password"
+                                                  placeholder="Password" />
+                                             <span toggle="#password"
+                                                  class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="password" class="form-input" name="re_password"
+                                                  id="re_password" placeholder="Confirm password">
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="checkbox" name="agree-term" id="agree-term"
+                                                  class="agree-term">
+                                             <label for="agree-term"
+                                                  class="label-agree-term"><span><span></span></span>I agree all
+                                                  statements in <a href="#" class="term-service">Terms of service</a>
+                                             </label>
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="submit" name="submit" id="submit" class="form-submit"
+                                                  value="Submit" />
+                                        </div>
+                                   </form>
+                                   <p class="loginhere">
+                                        Have already an account ? <a href="../templates/login.html"
+                                             class="loginhere-link">Login here</a>
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+               </div>
+
+          </section>
+     </div>
+     <footer>
+          <hr>
+          <p class="footer">Project Portfolio ToNoeMia</p>
+     </footer>
+     <script type="text/javascript" src="../static/index.js"></script>
 </body>
+
 </html>
