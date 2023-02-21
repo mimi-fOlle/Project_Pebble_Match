@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,16 +16,22 @@
      <link rel="stylesheet" href="Assets/css/brands.css">
      <link rel="stylesheet" href="Assets/css/solid.css">
 
-     <link rel="stylesheet" href="../static/styles/style.css">
-     <link rel="stylesheet" href="../static/styles/login.css">
-     <link rel="stylesheet" href="../static/styles/signup.css">
+     <!--<link rel="stylesheet" href="static/styles/style.css">
+     <link rel="stylesheet" href="static/styles/login.css">
+     <link rel="stylesheet" href="static/styles/signup.css">-->
+     
+     <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+     <link rel="stylesheet" href="{% static 'styles/signup.css' %}">
+
 </head>
 
 <body>
      <header>
           <div class="container container_top">
                <section class="logo_name">
-                    <img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">
+                    <img src="{% static 'images/logo.png' %}" alt="logo-pebble">
+                    <!--<img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">-->
                </section>
                <section class="nav_bar_menu">
                     <nav>
@@ -38,7 +45,7 @@
                                         About </a>
                               </li>
                               <li>
-                                   <a href="#" class="button-menu button-style scale_button"
+                                   <a href="{% url 'login' %}" class="button-menu button-style scale_button"
                                         data-show="login">SignUp</a>
                               </li>
                          </ul>
@@ -100,7 +107,7 @@
                                         </div>
 
                                    </form> -->
-                                   {% block body %} {% endblock %}
+                                   {% block body %}{% endblock %} 
                                    <p class="loginhere">
                                         Have already an account ? <a href="../templates/login.html"
                                              class="loginhere-link">Login here</a>
@@ -149,6 +156,7 @@
                </section>
           </section>
      </div>
+     
      <footer>
           <hr>
           <p class="footer">Project Portfolio ToNoeMia</p>
@@ -159,7 +167,7 @@
 
 </html>
 
-<!-- {% block body %} {% endblock %} -->
+
 <!-- Optional JavaScript; choose one of the two! -->
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->

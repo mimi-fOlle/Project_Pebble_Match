@@ -23,8 +23,9 @@ from account.views import RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', views.home, name='index'),
     path('about/', views.about, name='about'),
+    #path('account/', views.view, name='login'),
     path('account/', views.view, name='account_view'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(template_name='authn/login.html'), name='login'),
