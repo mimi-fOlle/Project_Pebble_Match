@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> account </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="fullPage fixed full-screen backgrounds." />
+  <!-- bootstrap -->
+  <script type="text/javascript" src="./vendor/js/bootstrap.js"></script>
+  <link href="./vendor/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="Assets/css/fontawesome.css">
+  <link rel="stylesheet" href="Assets/css/brands.css">
+  <link rel="stylesheet" href="Assets/css/solid.css">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <div class="container_top">
+      <div class="logo_name">
+        <img class="images_logo" src="./images/logo.png" alt="logo-pebble">
+      </div>
+      
+      <div class="nav_bar_menu">
+          <ul>
+               <li>
+                    <a href="#" class="button-style button-menu" data-show="home"> Quiz </a>
+                  </li>
+                  <li>
+                    <a href="./about.html" class="button-style button-menu" data-show="about"> My Match </a>
+                  </li>
+                  <li>
+                    <a href="{% url 'logout' %}" class="button-style button-menu" data-show="login">Logout</a>
+                  </li>
+                  <li>
+                    <button class="button-style button-menu" data-show="menu_hidden" id="button_home_logo"> <i class="fa-solid fa-house"></i></button>
+                         <nav  class="menu_hidden" id="menu_hidden">
+                           <ul>
+                             <li>
+                               <a href="./index.html" class="" data-show="home"> Home </a>
+                             </li>
+                             <li>
+                               <a href="./about.html" class="" data-show="home"> About </a>
+                             </li>  
+                           </ul>
+                         </nav>
+               </li>
+          </ul>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+     <div class="section1 row">
+  
+          <div class="col-sm-6">
+{% block body %}
+
+    <div class="main-banner">
+
+        <div class="jumbotron">
+            <h1 class="display-1">Hello! {{ request.user.username }}</h1>
+            <p class="lead">Your Pebble Match Registration is Successful!</p>
+            <hr class="my-2">
+            <p>Here is your Detail Profile.</p>
+            <p class="lead">
+            <p>UserName: {{ request.user.username }}</p>
+            <p>First Name: {{ request.user.first_name }}</p>
+            <p>Last Name: {{ request.user.last_name }}</p>
+            <p>Email: {{ request.user.email }}</p>
+            </p>
+            <a class="btn btn-primary btn-lg" href="{% url 'password_change' %}">Change password</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'logout' %}">Logout</a>
+        </div>
+    </div>
+{% endblock %}
+               </div>
+
+          </div>
+          
+     </div>
+     <div class="row">
+          <div class="hr-underline"></div>
+
+     </div>
+     <div id="fullpage" class="container">
+      <button class="logout button-style">Log out</button>
+          <div class="section2 fp-auto-height" id="section2">
+               <div class="intro-about" , id="about">
+                    <div class="greating_name">
+                         <h2 style="color:blue" class="greeting">
+                              HELLO <span>{{TONY CHONG}}</span></div>
+                         </h2>
+               </div>
+               <div class="greating_text"> 
+                    <h3>Are you ready to start?</h3>
+                    <h3>Click on Quiz</h3>
+               </div>
+          </div>
+     </div>
+</div>
+  <footer>
+    <hr>
+    <p class="footer">Project Portfolio ToNoeMia</p>
+    </footer>
+<!--   <script type="text/javascript" src="./index.js"></script> -->
+  <script type="text/javascript" src="./js/home.js"></script>
+  <script type="text/javascript" src="./js/form.js"></script>
+</body >
+</html >

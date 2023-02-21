@@ -38,9 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'pebble.apps.PebbleConfig',
-    #'register.apps.RegisterConfig',
-    'account'
+    'account',
 ]
 
 #AUTH_USER_MODEL = "register.CustomUser"
@@ -127,8 +125,13 @@ USE_TZ = True
 
 SITE_NAME = 'pebblesite'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/"),
+]
+
+
 
 #CRISPY_TEMPLATE_PACK='bootstrap4'
 
