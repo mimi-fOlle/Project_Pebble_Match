@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title> Sign Up </title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="description" content="fullPage fixed full-screen backgrounds." />
+     <!-- bootstrap -->
+     <script type="text/javascript" src="./vendor/js/bootstrap.js"></script>
+     <link href="./vendor/css/bootstrap.css" rel="stylesheet">
+
+     <!-- Font awesome -->
+     <link rel="stylesheet" href="Assets/css/fontawesome.css">
+     <link rel="stylesheet" href="Assets/css/brands.css">
+     <link rel="stylesheet" href="Assets/css/solid.css">
+
+     <link rel="stylesheet" href="../static/styles/style.css">
+     <link rel="stylesheet" href="../static/styles/login.css">
+     <link rel="stylesheet" href="../static/styles/signup.css">
+</head>
+
+<body>
+     <header>
+          <div class="container container_top">
+               <section class="logo_name">
+                    <img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">
+               </section>
+               <section class="nav_bar_menu">
+                    <nav>
+                         <ul>
+                              <li>
+                                   <a href="../templates/index.html" class="button-menu button-style" data-show="home">
+                                        Home </a>
+                              </li>
+                              <li>
+                                   <a href="../templates/about.html" class="button-menu button-style" data-show="about">
+                                        About </a>
+                              </li>
+                              <li>
+                                   <a href="#" class="button-menu button-style scale_button"
+                                        data-show="login">SignUp</a>
+                              </li>
+                         </ul>
+                    </nav>
+               </section>
+          </div>
+     </header>
+     <div class="container">
+          <section class="big-text row">
+               <h1>SIGN UP FOR FREE</h1>
+          </section>
+          <section class="row">
+               <div class=" col-2"></div>
+               <div class="hr-underline col-8"></div>
+               <div class=" col-2"></div>
+          </section>
+          <section class="second-text row">
+               <h3>If you do not have an account, please sign up first.</h3>
+          </section>
+          <section id="fullpage" class="container container-signup">
+               <section class="container ct-signup">
+                    <section class="signup">
+                         <div class="container container-signup">
+                              <div class="signup-content" id="signup-content">
+                              <!--      <form method="POST" id="signup-form" class="signup-form">
+                                        <h2 class="form-title">Sign Up</h2>
+                                        <div class="form-group">
+                                             <p>Email Address</p>
+                                             <input type="email" class="form-input" name="email" id="email"
+                                                  placeholder="Enter Email" />
+                                        </div>
+                                        <div class="form-group">
+                                             <p>Pseudo</p>
+                                             <input type="text" class="form-input" name="pseudo" id="pseudo"
+                                                  placeholder="pseudo">
+                                        </div>
+                                        <div class="form-group">
+                                             <p>Password</p>
+                                             <input type="text" class="form-input" name="password" id="password"
+                                                  placeholder="Password" />
+                                             <span toggle="#password"
+                                                  class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="password" class="form-input" name="re_password"
+                                                  id="re_password" placeholder="Confirm password">
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="checkbox" name="agree-term" id="agree-term"
+                                                  class="agree-term">
+                                             <label for="agree-term"
+                                                  class="label-agree-term"><span><span></span></span>I agree all
+                                                  statements in <a href="#" class="term-service">Terms of service</a>
+                                             </label>
+                                        </div>
+                                        <div class="form-group">
+                                             <input type="submit" name="submit" id="submit" class="form-submit"
+                                                  value="Submit" />
+                                        </div>
+
+                                   </form> -->
+                                   {% block body %} {% endblock %}
+                                   <p class="loginhere">
+                                        Have already an account ? <a href="../templates/login.html"
+                                             class="loginhere-link">Login here</a>
+                                   </p>
+                              </div>
+                         </div>
+                    </section>
+               </section>
+               <section class=" fp-auto-height ct-accept" id="ct-accept">
+                    <div class=" intro-about rule-style" , id="rule-web">
+                         <p>
+                              Before you can use the Pebble Match, you will need to register for an account <b><u><i>(“Login”).</i></u></b>
+                              In order to create an account you must: <br>
+                         <ol>
+                              <li>
+                                   be at least <u><b style = "color:red">18 years</b> old or the age of majority to legally</u> enter into a contract
+                                   under the laws of your home country; and
+
+                              </li>
+                              <li>
+                                   be legally permitted to use the Pebble Match platform by the laws of your home
+                                   country.
+
+                              </li>
+                         </ol>
+
+
+                         We cannot allow you to use another person’s account or to share your account with any other
+                         person without permission. <br>
+
+                         We decline any responsibility or liability in the usage of this platform and its related data.
+
+                         </p>
+                    </div>
+                    <div class="container form-rule">
+                         <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="I agree the rules" id="flexCheckDefault">
+                              <label class = "form-check-label" for="flexCheckDefault">
+                                I agree the rules
+                              </label>
+                         </div>
+                              <div class="form-group" id="show_signup" >
+                                    <a class =" button-style button-accept" style="width: fit-content;">Sign Up</a>
+                              </div>
+                    </div>
+               </section>
+          </section>
+     </div>
+     <footer>
+          <hr>
+          <p class="footer">Project Portfolio ToNoeMia</p>
+     </footer>
+     <script type="text/javascript" src="../static/index.js"></script>
+     <script type="text/javascript" src="../static/signup.js"></script>
+</body>
+
+</html>
+
+<!-- {% block body %} {% endblock %} -->
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+-->
+</body>
+</html>

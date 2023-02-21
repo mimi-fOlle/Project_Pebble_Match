@@ -1,0 +1,27 @@
+{% extends 'website/base.html' %}
+
+{% block body %}
+
+    <div class="main-banner">
+        <title>About</title>
+        <div class="jumbotron">
+            <h1 class="display-1">Welcome to Pebble Match! {{ request.user.first_name }}</h1>
+            <p class="lead">
+                Love is not always at first sight.<br>
+                Love can be blind,<br>
+                Love can be cultivated.<br>
+                However,<br>
+                Love can also be damaged,<br>
+                By all the upsetting little things in our different living habits, behaviors, values and so on.<br>
+                Instead of trying to change all these gaps,<br>
+                Why not avoid them in the first place?<br>
+
+            </p>
+            <hr class="my-2">
+            <p><h3>What is Pebble Match?</h3></p>
+            <p><h3>Why Pebble?</h3></p>
+            <p><h3>How to use Pebble Match?</h3></p>
+
+        </div>
+    </div>
+{% endblock %}
