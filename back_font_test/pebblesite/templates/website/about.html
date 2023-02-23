@@ -22,13 +22,13 @@
      <header>
           <div class="container_top">
                <div class="logo_name">
-                    <img class="images_logo" src="../static/images/logo.png" alt="logo-bebbe">
+                    <img class="images_logo" src="../static/images/logo.png" alt="logo-pebble">
                </div>
                <div class="nav_bar_menu">
                     <nav>
                          <ul>
                               <li>
-                                   <a href="../templates/index.html" class="button-menu button-style"
+                                   <a href="{% url 'index' %}" class="button-menu button-style"
                                         data-show="home">Home</a>
                               </li>
                               <li>
@@ -36,7 +36,7 @@
                                         class="scale_button button-menu button-style" data-show="about">About</a>
                               </li>
                               <li>
-                                   <a href="./login.html" class="button-menu button-style"
+                                   <a href="{% url 'login' %}" class="button-menu button-style"
                                         data-show="login">Login</a>
                               </li>
                          </ul>
@@ -117,6 +117,10 @@
                               <li>In your personal page, click “Quiz” to start.</li>
                               <li>Once you finish the quiz, click on “Match”.</li>
                               <li>Your top three matches will show up on the page.</li>
+                              <li>You can also find your other matches with their scores on “My Match”.</li>
+                              <li>You have three complementary pebbles to decide who to give a pebble to.</li>
+                              <li>If your match accepts your pebble, then you might have found your match!</li>
+                              <li>Receive a notification in your mailbox whether your pebble has been accepted or rejected.</li>
                          </ol>
 
                     </div>
