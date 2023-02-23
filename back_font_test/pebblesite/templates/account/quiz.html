@@ -73,15 +73,7 @@
           <div class="hr-underline"></div>
 
      </div>
-          <form action="" method="post" novalidate>
-     <h1>Please fill the questions to find your match.</h1>
-          {% csrf_token %}
-               {% for field in obj %}
-                    <p>{{ field.label }} </p>
-                    <p>{{ field }}</p>
-               {% endfor %}
-          <input type="submit" value="submit">
-     </form>
+
      <!-- Show one question and two choices text a page
      {% for question in questions %}
           <h3>{{ question.question_text }}</h3>

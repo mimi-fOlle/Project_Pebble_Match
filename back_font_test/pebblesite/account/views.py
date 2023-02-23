@@ -1,9 +1,6 @@
-from django import forms
-from django.forms.widgets import RadioSelect
-from django.forms import fields, widgets
 from django.shortcuts import redirect, render
 from pebblesite import settings
-from .forms import RegisterForm
+from .forms import RegisterForm, QForm
 from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.models import User
@@ -63,73 +60,36 @@ class RegisterView(FormView):
             print("Error when registering a new user: %s" % e)
             return HttpResponse(get_template('registration/registration_complete.html').render())
 
+
 @login_required
 def view(request):
     return render(request, template_name='account/account.html')
 
+# See the QForm from "forms.py"
+class QFormView(FormView):
+    template_name = 'account/account.html'
+    form_class = QForm
+    #success_url = '/'
+        
+def quiz(request):
+    if request.method == "GET": # user see the questions
+        obj = QForm()
+        render(request, 'account/account.html', {"obj": obj})
 
-class QForm(forms.Form):
-    q1 = fields.CharField(
-        required=True,
-        label="1. How do you squeeze your toothpaste?",
-        widget=forms.RadioSelect(
-            choices=[
-                (1, "From the bottom"),
-                (2, "I do not care"),
-            ]
-        ),
-        initial=1,
-    )
-    q2 = fields.CharField(
-        required=True,
-        label="2. Which one represents you the most?",
-        widget=forms.RadioSelect(
-            choices=[
-                (1, "Sun"),
-                (2, "Moon"),
-            ]
-        ),
-        initial=1,
-    )
-    q3 = fields.CharField(
-        required=True,
-        label="3. Which way of travel do you prefer?",
-        widget=forms.RadioSelect(
-            choices=[
-                (1, "Cruise ship"),
-                (2, "Backpacking"),
-            ]
-        ),
-        initial=1,
-    )
-    q4 = fields.CharField(
-        required=True,
-        label="4. What kind of breakfast do you take?",
-        widget=forms.RadioSelect(
-            choices=[
-                (1, "Bacon and eggs"),
-                (2, "Pancakes with syrup"),
-            ]
-        ),
-        initial=1,
-    )
-    q5 = fields.CharField(
-        required=True,
-        label="5. How do you think about kids?",
-        widget=forms.RadioSelect(
-            choices=[
-                (1, "They are Angels"),
-                (2, "They are Devils"),
-            ]
-        ),
-        initial=1,
-    )
+'''
+    if request.method == "POST": # user answer the questions
+        obj = QForm(request.POST)
+        #usrid = request.GET.get("usrid")
+        
+        return render(request, 'account/account.html', {'obj': obj})
+'''
 
-
+'''
 @login_required
 def quiz(request):
     questions = Question.objects.all()
     return render(request, 'account/quiz.html', {'questions': questions})
+'''
 
 @login_required
 def answer_question(request, question_id):
@@ -169,7 +129,7 @@ def match_result(request, match_id):
         # Calculate the percentage of match results with other users
         if len(users) >= 1:
             num_same_answers = Choice.objects.filter(
-                question=question, choice_text_in=match.choices
+                question=question, choice_text_in=matches.choice
             ).count()
             percentage = (num_same_answers / len(users)) * 100
         else:
