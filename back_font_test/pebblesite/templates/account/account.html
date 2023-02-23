@@ -67,8 +67,17 @@
                          </h2>
                </div>
                <div class="greating_text"> 
+                    <form action="" method="post" novalidate>
                     <h3>Are you ready to start?</h3>
                     <h3>Click on Quiz</h3>
+                    
+                         {% csrf_token %}
+                              {% for field in obj %}
+                                   <p>{{ field.label }} </p>
+                              <p>{{ field }}</p>
+                              {% endfor %}
+                    <input type="submit" value="submit">
+                    </form>
                </div>
           </div>
      </div>
