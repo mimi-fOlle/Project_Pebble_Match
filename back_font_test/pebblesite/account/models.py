@@ -7,43 +7,35 @@ from django.contrib.auth.models import User
 class Account(models.Model):
     user = ForeignKey(User, on_delete=models.DO_NOTHING)
 
-class Users(models.Model):
-    id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=40)
-    first_name = models.CharField(max_length=40)
-    last_name = models.CharField(max_length=40)
-    email = models.EmailField(max_length=60)
-    password = models.CharField(max_length=60)
-    remaining_pebble = models.CharField(max_length=50)
+class Question(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    question_text = models.CharField(max_length=250)
 
     def __str__(self):
-        return self.username
+        return self.question_text
 
-    
-class Questions(models.Model):
-    question_id = models.AutoField(primary_key=True)
-    questions = models.CharField(max_length=250)
-    a_answer = models.CharField(max_length=100)
-    b_answer = models.CharField(max_length=100)
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.questions
+        return self.choice_text
     
-class Results(models.Model):
-    results_id = models.AutoField(primary_key=True)
-    results_question = models.CharField(max_length=50)
+
+class UserAnswer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.results_question
+        return self.choice
+
     
-'''
-class Matches(models.Model):
-    id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
-    user_id_matched = models.ForeignKey(Users, on_delete=models.CASCADE)
-    percentage = models.CharField(max_length=40)
-    pebble_status = models.EmailField(max_length=50)
+class Match(models.Model):
+    user1 = models.ForeignKey(User, related_name='matches', on_delete=models.CASCADE)
+    user2 = models.ForeignKey(User, on_delete=models.CASCADE)
+    percentage = models.FloatField()
+    pebble_status = models.IntegerField()
     
     def __str__(self):
-        return self.pebble_status
-'''
+        return f"{self.user1.username} matched with {self.user2.username} with a percentage of {self.percentage}%"
