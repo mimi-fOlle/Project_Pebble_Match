@@ -17,8 +17,8 @@
   <link rel="stylesheet" href="Assets/css/solid.css">
 
   <link rel="stylesheet" href="{% static 'styles/style.css' %}">
-  <!--<link rel="stylesheet" href="{% static 'styles/login.css' %}">
-  <link rel="stylesheet" href="{% static 'styles/signup.css' %}">-->
+  <link rel="stylesheet" href="{% static 'styles/login.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/signup.css' %}">
 
 </head>
 
@@ -45,7 +45,7 @@
                          <nav  class="menu_hidden" id="menu_hidden">
                            <ul>
                              <li>
-                               <a href="./index.html" class="" data-show="home"> Home </a>
+                               <a href="{% url 'index' %}" class="" data-show="home"> Home </a>
                              </li>
                              <li>
                                <a href="./about.html" class="" data-show="home"> About </a>
@@ -58,13 +58,13 @@
     </div>
   </header>
        <div id="fullpage" class="container">
-      <button class="logout button-style">Log out</button>
+      <button class="logout button-style"><h2 class="greeting">
+          Hello <span>{{ request.user.username }}</span></div>
+     </h2></button>
           <div class="section2 fp-auto-height" id="section2">
                <div class="intro-about" , id="about">
                     <div class="greating_name">
-                         <h2 style="color:blue" class="greeting">
-                              Hello <span>{{ request.user.username }}</span></div>
-                         </h2>
+                         
                </div>
                <div class="greating_text"> 
                     <form action="" method="post" novalidate>

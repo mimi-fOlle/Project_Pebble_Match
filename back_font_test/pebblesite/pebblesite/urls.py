@@ -26,7 +26,7 @@ urlpatterns = [
     path('', views.home, name='index'),
     path('about/', views.about, name='about'),
     path('account/', views.view, name='account_view'),
-    path('quiz/', views.quiz, name='account_quiz'),
+    path('quiz/', views.quiz, name='quiz'),
  # type: ignore    #path('my_match/', views.match_result, name='match_result'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(template_name='authn/login.html'), name='login'),

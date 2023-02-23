@@ -257,3 +257,12 @@ input[type=text]:placeholder {
 * {
   box-sizing: border-box;
 }
+/* account page */
+.greeting{
+  color: var(--color-text-rose);
+  
+}
+.logout.button-style {
+  width: 40rem;
+  margin-top: 40px;
+}

@@ -31,10 +31,10 @@
           <div class="nav_bar_menu">
           <ul>
                <li>
-                    <a href="#" class="button-style button-menu scale_button" data-show="quiz"> Quiz </a>
+                    <a href="{% url 'index' %}" class="button-style button-menu scale_button" data-show="quiz"> Quiz </a>
                </li>
                <li>
-                    <a href="./about.html" class="button-style button-menu" data-show="about"> My Match </a>
+                    <a href="{% url 'about' %}" class="button-style button-menu" data-show="about"> My Match </a>
                </li>
                <li>
                     <a href="#" class="button-style button-menu" data-show="menu_hidden"> <i class="fa-solid fa-house"></i></a>
@@ -42,10 +42,10 @@
                          <nav>
                               <ul>
                               <li>
-                                   <a href="./index.html" class="" data-show="home"> Home </a>
+                                   <a href="{% url 'index' %}" class="" data-show="home"> Home </a>
                               </li>
                               <li>
-                                   <a href="./index.html" class="" data-show="home"> About </a>
+                                   <a href="{% url 'about' %}" class="" data-show="home"> About </a>
                               </li>
                               <li>
                                    <a href="{% url 'logout' %}" class="" data-show="login">Logout</a>
@@ -73,17 +73,6 @@
           <div class="hr-underline"></div>
 
      </div>
-
-     <!-- Show one question and two choices text a page
-     {% for question in questions %}
-          <h3>{{ question.question_text }}</h3>
-          {% for choice in question.choice_set.all %}
-               <input type="radio" name="choice" value="{{ choice.id }}">{{ choice.choice_text }}
-               <br>
-          {% endfor %}
-     {% endfor %}-->
- 
-     <!--<div id="fullpage" class="container">
           <div class="section2 fp-auto-height" id="section2">
                <div class="quiz" , id="question1">
                     <span>1</span><p>How do you squeze your toothpaste</p>
