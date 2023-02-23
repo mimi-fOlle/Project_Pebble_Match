@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,20 +16,23 @@
   <link rel="stylesheet" href="Assets/css/brands.css">
   <link rel="stylesheet" href="Assets/css/solid.css">
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+  <!--<link rel="stylesheet" href="{% static 'styles/login.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/signup.css' %}">-->
+
 </head>
 
 <body>
   <header>
     <div class="container_top">
       <div class="logo_name">
-        <img class="images_logo" src="./images/logo.png" alt="logo-pebble">
+                    <img src="{% static 'images/logo.png' %}" alt="logo-pebble">
       </div>
       
       <div class="nav_bar_menu">
           <ul>
                <li>
-                    <a href="#" class="button-style button-menu" data-show="home"> Quiz </a>
+                    <a href="/quiz.html" class="button-style button-menu" data-show="quiz"> Quiz </a>
                   </li>
                   <li>
                     <a href="./about.html" class="button-style button-menu" data-show="about"> My Match </a>
@@ -53,11 +57,26 @@
       </div>
     </div>
   </header>
+       <div id="fullpage" class="container">
+      <button class="logout button-style">Log out</button>
+          <div class="section2 fp-auto-height" id="section2">
+               <div class="intro-about" , id="about">
+                    <div class="greating_name">
+                         <h2 style="color:blue" class="greeting">
+                              Hello <span>{{ request.user.username }}</span></div>
+                         </h2>
+               </div>
+               <div class="greating_text"> 
+                    <h3>Are you ready to start?</h3>
+                    <h3>Click on Quiz</h3>
+               </div>
+          </div>
+     </div>
   <div class="container">
      <div class="section1 row">
   
           <div class="col-sm-6">
-{% block body %}
+<!--{% block body %}
 
     <div class="main-banner">
 
@@ -76,7 +95,7 @@
             <a class="btn btn-primary btn-lg" href="{% url 'logout' %}">Logout</a>
         </div>
     </div>
-{% endblock %}
+{% endblock %}-->
                </div>
 
           </div>
@@ -86,13 +105,13 @@
           <div class="hr-underline"></div>
 
      </div>
-     <div id="fullpage" class="container">
+<!--     <div id="fullpage" class="container">
       <button class="logout button-style">Log out</button>
           <div class="section2 fp-auto-height" id="section2">
                <div class="intro-about" , id="about">
                     <div class="greating_name">
                          <h2 style="color:blue" class="greeting">
-                              HELLO <span>{{TONY CHONG}}</span></div>
+                              Hello <span>{{ request.user.username }}</span></div>
                          </h2>
                </div>
                <div class="greating_text"> 
@@ -100,7 +119,7 @@
                     <h3>Click on Quiz</h3>
                </div>
           </div>
-     </div>
+     </div>-->
 </div>
   <footer>
     <hr>
