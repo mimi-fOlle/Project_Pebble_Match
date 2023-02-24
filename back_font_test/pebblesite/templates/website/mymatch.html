@@ -1,0 +1,35 @@
+{% extends "website/mymatch_base.html" %}
+{% load static %}
+
+{% block body %}
+ <div class="fullpage result">
+     <div class="row">
+     {% block content %}
+     <h1>Match</h1>
+     <p>Your matches {{ percentage }}%</p>
+     {% endblock %}
+          <div class="person1 col" >
+               <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
+               <div class="name_match">
+                    <p>Mia Meo meo</p>
+                    <p>99%</p>
+               </div>
+          </div>
+          <div class="person1 col">
+               <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
+               <div class="name_match">
+                    <p>Mia Meo meo</p>
+                    <p>99%</p>
+               </div>
+          </div>
+          <div class="person1 col">
+               <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
+               <div class="name_match">
+                    <p>Mia Meo meo</p>
+                    <p>99%</p>
+               </div>
+          </div>
+     </div>
+</div> 
+
+{% endblock %}

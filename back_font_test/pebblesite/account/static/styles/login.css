@@ -75,7 +75,7 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset]  {
+input[type=button], input[type=submit], input[type=reset],  {
   background-color: white ;
   border: none;
   padding: 15px 80px;
@@ -107,18 +107,21 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
-input#id_username, input#id_password {
+input#id_username, input#id_password, input#id_email, input#id_password_confirm,  input#id_first_name {
   background-color: rgb(193, 189, 189);
   border: none;
   color: #0d0d0d;
+
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+
   font-size: 16px;
-  margin: 5px;
+  margin: 15px 0 0 0;
   width: 85%;
   border: 2px solid #f6f6f6;
+
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
@@ -127,7 +130,14 @@ input#id_username, input#id_password {
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
 }
+section.second-text.row {
+  margin-bottom: 20px;
+}
 
+.form-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 input[type=text]:focus {
   background-color: #fff;
@@ -262,7 +272,25 @@ input[type=text]:placeholder {
   color: var(--color-text-rose);
   
 }
-.logout.button-style {
+.logout{
   width: 40rem;
   margin-top: 40px;
+  height: 6rem;
+  display: block;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 20px;
+}
+.panel.panel-default {
+  display: block;
+  text-align: center;
+}
+input.btn.btn-primary {
+  background-color: violet;
+}
+input.btn.btn-primary:hover {
+  background-color: var(--color-text-rose-opacity);
+}
+.quiz_style{
+  line-height: 40px;
 }

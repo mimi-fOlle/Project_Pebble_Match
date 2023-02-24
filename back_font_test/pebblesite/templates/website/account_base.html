@@ -9,7 +9,6 @@
   <meta name="description" content="fullPage fixed full-screen backgrounds." />
   <!-- bootstrap -->
 
-  <link href="./vendor/css/bootstrap.css" rel="stylesheet">
 
 
   <link rel="stylesheet" href="{% static 'styles/style.css' %}">
@@ -31,7 +30,7 @@
                     <a href="{% url 'quiz' %}" class="button-style button-menu" data-show="quiz"> Quiz </a>
                   </li>
                   <li>
-                    <a href="./about.html" class="button-style button-menu" data-show="about"> My Match </a>
+                    <a href="{% url 'mymatch' %}" class="button-style button-menu" data-show="about"> My Match </a>
                   </li>
                   <li>
                     <a href="{% url 'logout' %}" class="button-style button-menu" data-show="login">Logout</a>
@@ -49,19 +48,7 @@
           </div>
  
           <div class="section2 fp-auto-height" id="section2">
-               <div class="greating_text"> 
-                    <form action="" method="post" novalidate>
-                         <div>
-                              <h2>Are you ready to start?</h2>
-                              <br>
-                              <h2>Please click on Quiz</h2>
-
-                         </div>
-                         <!--<div>
-                              <input type="submit" class="button-style" value="Start">
-                         </div>-->
-                    </form>
-               </div>
+               {% block body %}{% endblock %}
           </div>
      </div>
 </div>
