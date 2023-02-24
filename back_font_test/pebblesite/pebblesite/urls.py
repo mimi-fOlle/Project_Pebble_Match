@@ -21,13 +21,15 @@ from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView,
 from account.views import RegisterView
 
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='index'),
     path('about/', views.about, name='about'),
     path('account/', views.view, name='account_view'),
-    path('quiz/', views.quiz, name='account_quiz'),
- # type: ignore    #path('my_match/', views.match_result, name='match_result'),
+    path('quiz/', views.quiz, name='quiz'),
+    path('quiz/website/mymatch/', views.match_result, name='mymatch'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(template_name='authn/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='authn/logged_out.html'), name='logout'),

@@ -9,6 +9,8 @@
      --color-text-rose: rgb(255, 0, 187);
      --color-text-rose-opacity:  rgba(255, 0, 187, 0.21);
      --color-box-violet: #ca9fdb5e;
+     --margin-bottom: 2rem;
+     --font-size: 20px;
 }
 
 /* login page */
@@ -33,6 +35,9 @@ a {
      display: flex;
      justify-content: space-around;
      height: 100px;
+}
+.container{
+     align-items: center;
 }
 
 .logo_name {
@@ -89,7 +94,7 @@ body {
 }
 
 /* full page */
-#fullpage {
+.fullpage {
      display: flex;
      flex-direction: column;
      align-items: center;
@@ -97,9 +102,13 @@ body {
 
 /*section2  */
 .intro-text {
-     font-size: 25px;
+     font-size: 2rem;
      text-align: center;
      font-family:  'CustomFont', sans-serif;
+     margin-bottom: 2rem;
+    line-height: 3rem;
+    color: var(--color-text-rose);
+
 }
 
 .penguin {
@@ -204,5 +213,9 @@ body {
           margin-top: 1rem;
           font-family: var(--font-family-custom);
           text-align: center;
-          color: var(--color-text-rose)
+          color: var(--color-text-rose);
+          margin-bottom: var(--margin-bottom);
+          font-size: 1.2rem;
      }
+
+/* account page */
