@@ -15,22 +15,5 @@
      {% endfor %}
      <a href="{% url 'mymatch' %}" class="button-menu button-style scale_button" data-show="match">Match</a>
 </form>
-<!--
-          {% for question in questions %}
-          <div class="quiz_style">
-          <h1>Anwser your question</h1>
-               <h2>{{ question.question_text }}</h2>
-               <form method="post" action="question.id">
-                    {% csrf_token %}
-                    {% for choice in choices %}
-                         <div>
-                         <input type="radio" id="choice{{ forloop.counter }}" name="choice" value="{{ choice.id }}">
-                         <label for="choice{{ forloop.counter }}">{{ choice.choice_text}}</label>
-                         </div>
-                    {% endfor %}
-                    <button type="submit" class="button-style">Next</button>
-               </form>
-          </div>
-          {% endfor %}
-     -->
+
 {% endblock %}

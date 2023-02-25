@@ -6,23 +6,23 @@
      <div class="row">
      {% block content %}
      <h1>Match</h1>
-     <p>Your matches {{ percentage }}%</p>
+     <p>{{ request.user.username }} {{ percentage }}%</p>
      {% endblock %}
-          <div class="person1 col" >
+          <div class="person1 col-4" >
                <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
                <div class="name_match">
-                    <p>Mia Meo meo</p>
-                    <p>99%</p>
+                    <p>Your matches {{ percentage }}%</p>
+                    <!--<p>99%</p>-->
                </div>
           </div>
-          <div class="person1 col">
+          <div class="person1 col-4">
                <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
                <div class="name_match">
                     <p>Mia Meo meo</p>
                     <p>99%</p>
                </div>
           </div>
-          <div class="person1 col">
+          <div class="person1 col-4">
                <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
                <div class="name_match">
                     <p>Mia Meo meo</p>
