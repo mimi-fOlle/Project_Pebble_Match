@@ -7,42 +7,38 @@
     <form method="post">
         <div class="form-group">
             {% csrf_token %}
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page"><h3>Register Here</h3></li>
-                </ol>
-            </nav>
+            <h1 style="text-align:center">Register Here</h1>
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="form-group clearfix">
-                            <label for="username" class="col-md-2 control-label text-right">Username:</label>
+                            <label for="username" class="col-md-2 control-label text-right">Username</label>
                             {{ form.username }}
                         </div>
                         <div class="form-group clearfix">
-                            <label for="first_name" class="col-md-2 control-label text-right">First Name:</label>
+                            <label for="first_name" class="col-md-2 control-label text-right">First Name</label>
                             {{ form.first_name }}
                         </div>
                         <div class="form-group clearfix">
-                            <label for="last_name" class="col-md-2 control-label text-right">Last Name:</label>
+                            <label for="last_name" class="col-md-2 control-label text-right">Last Name</label>
                             {{ form.last_name }}
                         </div>
                         <div class="form-group clearfix">
-                            <label for="email" class="col-md-2 control-label text-right">Email:</label>
+                            <label for="email" class="col-md-2 control-label text-right">Your Email   </label>
                             {{ form.email }}
                         </div>
                         <div class="form-group clearfix">
-                            <label for="password" class="col-md-2 control-label text-right">Password:</label>
+                            <label for="password" class="col-md-2 control-label text-right">Your Password</label>
                             {{ form.password }}
                         </div>
                         <div class="form-group clearfix">
                             <label for="password_confirm" class="col-md-2 control-label text-right">Confirm
-                                Password:</label>
+                                Password</label>
                             {{ form.password_confirm }}
                         </div>
 
                     </div>
-                    <input class="btn btn-primary" type="submit" value="Register">
+                    <input class="btn" type="submit" value="Register">
                 </div>
 
             </div>

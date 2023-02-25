@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +7,8 @@
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
      <meta name="description" content="fullPage fixed full-screen backgrounds." />
-     <!-- bootstrap -->
-
-     <link href="./vendor/css/bootstrap.css" rel="stylesheet">
-
-
-     <link rel="stylesheet" href="../static/styles/style.css">
+     <!-- css -->
+     <link rel="stylesheet" href="{% static 'styles/style.css' %}?{% now 'U' %}">
 </head>
 
 <body>
@@ -43,9 +40,9 @@
      <div class="container">
           <div class="section1 row">
                <div class="col-sm-3">
-                    <button class="btn btn_about button-style " type="button" data-show="about">
+                    <span  type="button" data-show="about">
                          <img src="../static/images/Home_page_penguins.png" class="icon-chim"alt="logo-chimcanhcut">
-                    </button>
+                    </span>
                </div>
                <div class="col-sm-3">
                     <button class="btn btn_about button-style " type="button" data-show="what">
@@ -67,7 +64,7 @@
                <div class="hr-underline"></div>
 
           </div>
-          <div id="fullpage" class="container">
+          <div  class="fullpage">
                <div class="section2 fp-auto-height" id="section2">
                     <div class="content-to-show intro-about" , id="about">
                          <p>
@@ -108,16 +105,16 @@
 
                     </div>
                     <div class="content-to-show" id="how">
-                         <ol>
-                              <li>You must sign up to create an account, and <b> “Login”</b>.</li>
-                              <li>In your personal page, click “Quiz” to start.</li>
-                              <li>Once you finish the quiz, click on “Match”.</li>
-                              <li>Your top three matches will show up on the page.</li>
-                              <li>You can also find your other matches with their scores on “My Match”.</li>
-                              <li>You have three complementary pebbles to decide who to give a pebble to.</li>
-                              <li>If your match accepts your pebble, then you might have found your match!</li>
-                              <li>Receive a notification in your mailbox whether your pebble has been accepted or rejected.</li>
-                         </ol>
+                         <ul>
+                              <li>1. You must sign up to create an account, and <b> “Login”</b>.</li>
+                              <li>2. In your personal page, click “Quiz” to start.</li>
+                              <li>3. Once you finish the quiz, click on “Match”.</li>
+                              <li>4. Your top three matches will show up on the page.</li>
+                              <li>5. You can also find your other matches with their scores on “My Match”.</li>
+                              <li>6. You have three complementary pebbles to decide who to give a pebble to.</li>
+                              <li>7. If your match accepts your pebble, then you might have found your match!</li>
+                              <li>8. Receive a notification in your mailbox whether your pebble has been accepted or rejected.</li>
+                         </ul>
 
                     </div>
 
