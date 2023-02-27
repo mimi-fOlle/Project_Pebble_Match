@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 from pebblesite import settings
 from .forms import RegisterForm
 from django.contrib import messages
@@ -68,12 +68,33 @@ def view(request):
 
 #@login_required
 def quiz(request):
-    questions = Question.objects.all()[:5] # Display 5 questions on a page
-    choices = Choice.objects.filter(question=questions[0])[:2] # Each questions with 2 choices
-    return render(request, 'website/quiz.html', {'questions': questions, 'choices': choices})
+    if request.method == 'POST':
+        for question_id in request.POST:
+            if question_id.startswith('question'):
+                question = Question.objects.get(id=question_id.split('question')[-1])
+                choice = Choice.objects.get(id=request.POST[question_id])
+                if choice.is_match:
+                    user_answer = UserAnswer(user=request.user, question=question, choice=choice, is_match=True)
+                else:
+                    user_answer = UserAnswer(user=request.user, question=question, choice=choice)
+                user_answer.save()
+
+        matches = Match.objects.all()
+        user_id = request.user.id
+        url = reverse('mymatch', args=[user_id])
+        return HttpResponseRedirect(url)
+    else:
+        questions = Question.objects.all()[:5] # Display 5 questions on a page
+        choices = Choice.objects.filter(question=questions[0])[:2] # Each questions with 2 choices
+        return render(request, 'website/quiz.html', {'questions': questions, 'choices': choices})
+    
+
+def mymatch(request):
+    matches = Match.objects.all()
+    return render(request, 'website/mymatch.html', {'matches': matches})
 
 
-
+'''
 #@login_required
 def match_result(request):
     user = request.user
@@ -89,55 +110,47 @@ def match_result(request):
     context = {'percentage': percentage}
     return render(request, 'website/mymatch.html', context)
 
-'''
+
+
+def match_result(request, user_id=None):
+    if user_id:
+        user = User.objects.get(id=user_id)
+    else:
+        user = request.user
+    user_answers = UserAnswer.objects.filter(user=user)
+    total_questions = Question.objects.count()
+    match_answers = 0
+
+    for answer in user_answers:
+        if answer.choice.is_match:
+            match_answers += 1
+
+    percentage = (match_answers / total_questions) * 100
+    context = {'percentage': percentage, 'user_id': user_id}
+    return render(request, 'website/mymatch.html', context)
+'''      
+
+#@login_required
 def match_result(request, user_id):
-    if request.method == 'POST':
-        choices = {}
-        user = get_object_or_404(User, id=user_id)
-        matches = Match.objects.filter(user=user).order_by('-percentage')
-        user_answers = UserAnswer.objects.filter(user=user)
-        total_questions = Question.objects.count()
-        match_answers = 0
+    user_answers = UserAnswer.objects.filter(user=request.user).order_by('question__id')
+    matches = Match.objects.all()
+    match_answers = []
+    matched_user = None
+    for match in matches:
+        is_match = True
+        match_answer = {}
+        for question in match.questions.all():
+            try:
+                user_answer = user_answers.get(question=question)
+            except UserAnswer.DoesNotExist:
+                is_match = False
+                break
+            if user_answer.choice not in question.choices.filter(is_correct=True):
+                is_match = False
+                break
+            if user_answer.choice.is_match:
+                matched_user = user_answer.choice.user.username
+        if is_match:
+            match_answers.append(match_answer)
 
-        for key, value in request.POST.items():
-            if key.startswith('question_'):
-                question_id = int(key.split('_')[1])
-                choice_id = int(value)
-                choices[question_id] = choice_id
-
-                for answer in user_answers:
-                    if answer.choice.is_match:
-                        match_answers += 1
-
-                percentage = (match_answers / total_questions) * 100
-                context = {'percentage': percentage}
-                return render(request, context)
-
-        return redirect('website/mymatch', matches)
-'''
-            
-
-        
-
-'''
-    matches = Match.objects.get(id=match_id)
-    # Calculate the percentage of match results with other users for each question
-    questions = Question.objects.exclude(is_matching_question=True)
-    match_results = []
-
-    for question in questions:
-        # Get all the users who have answered this question
-        users = Choice.objects.filter(question=question).values_list('user_id', flat=True)
-
-        # Calculate the percentage of match results with other users
-        if len(users) >= 1:
-            num_same_answers = Choice.objects.filter(
-                question=question, choice_text_in=matches.choice
-            ).count()
-            percentage = (num_same_answers / len(users)) * 100
-        else:
-            percentage = 0
-        match_results.append({'question': question, 'percentage': percentage})
-
-    return render(request, 'website/mymatch.html', {'match': match, 'match_results': match_results})
-        '''
+    return render(request, 'website/mymatch.html', {'matches': match_answers, 'matched_user': matched_user})

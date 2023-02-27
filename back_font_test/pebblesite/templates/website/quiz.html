@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body %}
-<form method="post">
+<form method="post" action="{% url 'mymatch' user.id %}">
      {% csrf_token %}
      {% for question in questions %}
           <h3>{{ question.question_text }}</h3>
@@ -13,7 +13,8 @@
                </div>
           {% endfor %}
      {% endfor %}
-     <a href="{% url 'mymatch' %}" class="button-menu button-style scale_button" data-show="match">Match</a>
+     <!--<button type="submit" class="button-menu button-style scale_button" data-show="match">Match</button>-->
+     <a href="{% url 'mymatch' user_id=request.user.id %}" class="button-menu button-style scale_button" data-show="match">Match</a>
 </form>
 
 {% endblock %}
