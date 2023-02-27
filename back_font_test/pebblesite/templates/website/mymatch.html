@@ -5,8 +5,11 @@
  <div class="fullpage result">
      <div class="row">
      {% block content %}
-     <h1>Match</h1>
-     <p>{{ request.user.username }} {{ percentage }}%</p>
+     {% if matched_user %}
+          <p>Congratulations, you matched with {{ matched_user }}!</p>
+     {% endif %}
+     <!--<h1>Match</h1>
+     <p>{{ request.user.username }} {{ percentage }}%</p>-->
      {% endblock %}
           <div class="person1 col-4" >
                <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
