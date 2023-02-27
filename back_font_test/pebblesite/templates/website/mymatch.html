@@ -5,33 +5,43 @@
  <div class="fullpage result">
      <div class="row">
      {% block content %}
-     {% if matched_user %}
-          <p>Congratulations, you matched with {{ matched_user }}!</p>
-     {% endif %}
-     <!--<h1>Match</h1>
-     <p>{{ request.user.username }} {{ percentage }}%</p>-->
+     {% for match in matches %}
+          <h3>{{ match.user1.username }} and {{ match.user2.username }}</h3>
+          <p>{{ match.percentage }}
+     {% empty %}
+          <p>No matches found.</p>
+     {% endfor %}
      {% endblock %}
-          <div class="person1 col-4" >
-               <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
-               <div class="name_match">
-                    <p>Your matches {{ percentage }}%</p>
-                    <!--<p>99%</p>-->
+     <div class="container">
+          <div class="row">
+               <div class="person1 col-4" >
+                   
+                    <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
+                    <div class="name_match">
+                         <p>Your matches {{matched_user}}</p>
+                         </p>  {{ percentage }}%</p>
+                         <button class="button-style">Send a Pebble</button>
+                    </div>
+               </div>
+               <div class="person1 col-4">
+                    <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
+                    <div class="name_match">
+                         <p>Your matches </p>
+                    </p>  {{ percentage }}%</p>
+                    <button class="button-style"> Send a Pebble</button>
+                    </div>
+               </div>
+               <div class="person1 col-4">
+                    <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
+                    <div class="name_match">
+                         <p>Your matches </p>
+                    </p>  {{ percentage }}%</p>
+                    <button class="button-style">Send a Pebble</button>
+                    </div>
                </div>
           </div>
-          <div class="person1 col-4">
-               <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
-               <div class="name_match">
-                    <p>Mia Meo meo</p>
-                    <p>99%</p>
-               </div>
-          </div>
-          <div class="person1 col-4">
-               <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
-               <div class="name_match">
-                    <p>Mia Meo meo</p>
-                    <p>99%</p>
-               </div>
-          </div>
+     </div>
+       
      </div>
 </div> 
 

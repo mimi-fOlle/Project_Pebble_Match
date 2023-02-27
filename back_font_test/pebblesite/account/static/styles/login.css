@@ -294,3 +294,25 @@ input.btn.btn-primary:hover {
 .quiz_style{
   line-height: 40px;
 }
+
+
+.person1 img {
+  width: 100px;
+  margin-bottom: -30px;
+  margin-left: -30px;
+  
+}
+.name_match {
+  background-color: var(--color-box-violet);
+  border: 1px solid var(--color-box-violet);
+  width: 20rem;
+  height: 8rem;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  font-family: var(--font-family-custom);
+  color: rgb(253, 253, 253);
+}
+.name_match p{
+  margin-top: 20px;
+}

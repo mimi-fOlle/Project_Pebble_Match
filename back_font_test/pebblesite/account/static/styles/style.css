@@ -132,9 +132,8 @@ body {
      padding: 20px;
      background-color: #ca9fdb5e;
      box-shadow: 0em 0.4em 0.4em 0.4em #ffffff94;
-
-     
 }
+
 
 .penguin_photo {
      display: flex;
@@ -220,3 +219,24 @@ body {
      text-align: left;
 }
 /* account page */
+.section3 {
+     position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     flex-direction: column;
+ 
+ 
+     border: 1px solid white;
+     border-radius: 30px;
+ 
+     width: 30em;
+     height: 10rem;
+ 
+     margin: 20px 0 20px 0;
+     padding: 20px;
+     background-color: #ca9fdb5e;
+     box-shadow: 0em 0.4em 0.4em 0.4em #ffffff94;
+ 
+ }

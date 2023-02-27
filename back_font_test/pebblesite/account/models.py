@@ -29,7 +29,7 @@ class UserAnswer(models.Model):
     choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.choice
+        return str(self.choice)
 
     
 class Match(models.Model):
