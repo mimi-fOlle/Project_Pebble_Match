@@ -10,7 +10,8 @@ from django.template.loader import get_template
 from django.urls import reverse
 from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
-from .models import Question, Choice, UserAnswer, Match
+from account.models import Question, Choice, UserAnswer, Match
+from django.db.models import Q, Count
 import random
 
 
@@ -66,7 +67,7 @@ def view(request):
     return render(request, template_name='account/account.html')
 
 
-#@login_required
+#@transaction.atomic
 def quiz(request):
     if request.method == 'POST':
         for question_id in request.POST:
@@ -90,15 +91,7 @@ def quiz(request):
     
 
 def mymatch(request):
-    matches = Match.objects.all()
-    return render(request, 'website/mymatch.html', {'matches': matches})
-
-
-'''
-#@login_required
-def match_result(request):
-    user = request.user
-    user_answers = UserAnswer.objects.filter(user=user)
+    user_answers = UserAnswer.objects.filter(user=request.user)
     total_questions = Question.objects.count()
     match_answers = 0
 
@@ -107,50 +100,53 @@ def match_result(request):
             match_answers += 1
 
     percentage = (match_answers / total_questions) * 100
-    context = {'percentage': percentage}
-    return render(request, 'website/mymatch.html', context)
-
-
-
-def match_result(request, user_id=None):
-    if user_id:
-        user = User.objects.get(id=user_id)
-    else:
-        user = request.user
-    user_answers = UserAnswer.objects.filter(user=user)
-    total_questions = Question.objects.count()
-    match_answers = 0
-
-    for answer in user_answers:
-        if answer.choice.is_match:
-            match_answers += 1
-
-    percentage = (match_answers / total_questions) * 100
-    context = {'percentage': percentage, 'user_id': user_id}
-    return render(request, 'website/mymatch.html', context)
-'''      
+    url = reverse('mymatch', args=[request.user.id])
+    return HttpResponseRedirect(url)
 
 #@login_required
 def match_result(request, user_id):
-    user_answers = UserAnswer.objects.filter(user=request.user).order_by('question__id')
-    matches = Match.objects.all()
-    match_answers = []
-    matched_user = None
-    for match in matches:
-        is_match = True
-        match_answer = {}
-        for question in match.questions.all():
-            try:
-                user_answer = user_answers.get(question=question)
-            except UserAnswer.DoesNotExist:
-                is_match = False
-                break
-            if user_answer.choice not in question.choices.filter(is_correct=True):
-                is_match = False
-                break
-            if user_answer.choice.is_match:
-                matched_user = user_answer.choice.user.username
-        if is_match:
-            match_answers.append(match_answer)
+    user = User.objects.get(id=user_id)
+    user_answers = UserAnswer.objects.filter(user=user)
+    total_questions = Question.objects.count()
+    match_answers = 0
 
-    return render(request, 'website/mymatch.html', {'matches': match_answers, 'matched_user': matched_user})
+    for answer in user_answers:
+        if answer.choice.is_match:
+            match_answers += 1
+
+    percentage = (match_answers / total_questions) * 100
+
+    matches = Match.objects.filter(user1=user) | Match.objects.filter(user2=user)
+    matches = list(matches)
+    random.shuffle(matches)
+
+    context = {'percentage': percentage, 'matches': matches}
+    return render(request, 'website/mymatch.html', context)
+
+
+def calculate_matches(request):
+    user_answers = UserAnswer.objects.values('user').distinct()
+    users = User.objects.filter(id__in=user_answers)
+
+    users_list = list(users)
+    random.shuffle(users_list)
+
+    matches = []
+    for i in range(len(users_list)):
+        user1 = users_list[i]
+        user1_answers = UserAnswer.objects.filter(user=user1, choice__is_match=True)
+        user1_total_questions = UserAnswer.objects.filter(user=user1).count()
+
+        for j in range(i + 1, len(users_list)):
+            user2 = users_list[j]
+            user2_match_answers = UserAnswer.objects.filter(user=user2, choice__is_match=True)
+            user2_total_questions = UserAnswer.objects.filter(user=user2).count()
+            common_answers = user1_answers.filter(question__in=user2_match_answers.values_list('question', flat=True))
+            common_count = common_answers.count()
+            percentage = (common_count / user1_total_questions) * 100
+            if percentage > 0:
+                match = Match(user1=user1, user2=user2, percentage=percentage)
+                matches.append(match)
+
+    Match.objects.bulk_create(matches)
+    return HttpResponse('Matches generated successfully!')

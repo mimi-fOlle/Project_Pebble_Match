@@ -5,13 +5,15 @@
 <form method="post" action="{% url 'mymatch' user.id %}">
      {% csrf_token %}
      {% for question in questions %}
-          <h3>{{ question.question_text }}</h3>
-          {% for choice in question.choice_set.all %}
-               <div>
-                    <input type="radio" id="choice{{ choice.id }}" name="question{{ question.id }}" value="{{ choice.id }}">
-                    <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label>
-               </div>
-          {% endfor %}
+     <div class="section3" >
+          <div class="quiz_block " >
+               <h3>{{ question.question_text }}</h3>
+               {% for choice in question.choice_set.all %}
+               <input type="radio" id="choice{{ choice.id }}" name="question{{ question.id }}" value="{{ choice.id }}">
+               <label for="choice{{ choice.id }}">{{ choice.choice_text }}</label>
+               {% endfor %}
+          </div>
+     </div>
      {% endfor %}
      <!--<button type="submit" class="button-menu button-style scale_button" data-show="match">Match</button>-->
      <a href="{% url 'mymatch' user_id=request.user.id %}" class="button-menu button-style scale_button" data-show="match">Match</a>
