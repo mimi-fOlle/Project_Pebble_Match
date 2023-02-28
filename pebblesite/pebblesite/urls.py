@@ -28,7 +28,6 @@ urlpatterns = [
     path('account/', views.view, name='account_view'),
     path('quiz/', views.quiz, name='quiz'),
     path('quiz/website/mymatch/<int:user_id>/', views.match_result, name='mymatch'),
-    #path('quiz/website/mymatch/', views.calculate_matches, name='mymatch'),
     path('register/', RegisterView.as_view(), name='register'),
     path('login/', LoginView.as_view(template_name='authn/login.html'), name='login'),
     path('logout/', LogoutView.as_view(template_name='authn/logged_out.html'), name='logout'),

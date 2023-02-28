@@ -33,10 +33,13 @@ class UserAnswer(models.Model):
 
     
 class Match(models.Model):
-    user1 = models.ForeignKey(User, related_name='matches', on_delete=models.CASCADE)
-    user2 = models.ForeignKey(User, on_delete=models.CASCADE)
-    percentage = models.FloatField()
+    user1 = models.ForeignKey(User, related_name='matches_as_user1', on_delete=models.CASCADE)
+    user2 = models.ForeignKey(User, related_name='matches_as_user2', on_delete=models.CASCADE)
+    user3 = models.ForeignKey(User, related_name='matches_as_user3', on_delete=models.CASCADE, default=1)
+    percentage1 = models.FloatField(default=0)
+    percentage2 = models.FloatField(default=0)
+    percentage3 = models.FloatField(default=0)
     pebble_status = models.IntegerField()
     
     def __str__(self):
-        return f"{self.user1.username} matched with {self.user2.username} with a percentage of {self.percentage}%"
+        return f"{self.user1.username} matched with {self.user2.username} and {self.user3.username} with a percentages {self.percentage1}%, {self.percentage2}%, {self.percentage3}%"
