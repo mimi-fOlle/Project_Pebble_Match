@@ -11,7 +11,7 @@ from django.urls import reverse
 from django.views.generic import FormView
 from django.contrib.auth.decorators import login_required
 from account.models import Question, Choice, UserAnswer, Match
-from django.db.models import Q
+import time
 import random
 
 
@@ -88,44 +88,22 @@ def quiz(request):
         choices = Choice.objects.filter(question=questions[0])[:2] # Each questions with 2 choices
         return render(request, 'website/quiz.html', {'questions': questions, 'choices': choices})
     
-'''
-def mymatch(request):
-    user_answers = UserAnswer.objects.filter(user=request.user)
-    total_questions = Question.objects.count()
-    match_answers = 0
 
-    for answer in user_answers:
-        if answer.choice.is_match:
-            match_answers += 1
-
-    percentage = (match_answers / total_questions) * 100
-    url = reverse('mymatch', args=[request.user.id])
-    return HttpResponseRedirect(url)
-'''
-    
-#@login_required
 def match_result(request, user_id):
     user = User.objects.get(id=user_id)
-    user_answers = UserAnswer.objects.filter(user=user)
-    total_questions = Question.objects.count()
-    match_answers = 0
-
-    for answer in user_answers:
-        if answer.choice.is_match:
-            match_answers += 1
-
-    percentage = (match_answers / total_questions) * 100
-
-    matches = Match.objects.exclude(user1=user).exclude(user2=user).exclude(user3=user).order_by('-percentage1', '-percentage2', '-percentage3')
+    matches = Match.objects.exclude(user1=user).exclude(user2=user).exclude(user3=user).order_by('?')
     unique_matches = set()
     for match in matches:
-        if len(unique_matches) >= 3:
+        if len(unique_matches) >= 1: # 3 results == 1
             break
-    match_tuple = (match.user1, match.user2, match.user3)
-    if match_tuple not in unique_matches:
-        unique_matches.add(match_tuple)
+        match_tuple = (match.user1, match.user2, match.user3)
+        if match_tuple not in unique_matches:
+            unique_matches.add(match_tuple)
     matches = [Match.objects.get(user1=user1, user2=user2, user3=user3) for (user1, user2, user3) in unique_matches]
+    random.seed(time.time())
     random.shuffle(matches)
 
-    context = {'percentage': percentage, 'matches': matches}
+
+    context = {'matches': matches}
     return render(request, 'website/mymatch.html', context)
+    
