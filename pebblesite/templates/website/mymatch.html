@@ -6,41 +6,39 @@
      <div class="row">
      {% block content %}
      {% for match in matches %}
-          <h3>{{ match.user1.username }} and {{ match.user2.username }}</h3>
-          <p>{{ match.percentage }}
-     {% empty %}
-          <p>No matches found.</p>
-     {% endfor %}
-     {% endblock %}
      <div class="container">
           <div class="row">
                <div class="person1 col-4" >
-                   
+
                     <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
                     <div class="name_match">
-                         <p>Your matches {{matched_user}}</p>
-                         </p>  {{ percentage }}%</p>
+                         <p>{{ match.user1.username }}</p>
+                         <p>{{ match.percentage1 }}%</p>
                          <button class="button-style">Send a Pebble</button>
                     </div>
                </div>
                <div class="person1 col-4">
                     <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
                     <div class="name_match">
-                         <p>Your matches </p>
-                    </p>  {{ percentage }}%</p>
+                         <p>{{ match.user2.username }}</p>
+                         <p>{{ match.percentage2 }}%</p>
                     <button class="button-style"> Send a Pebble</button>
                     </div>
                </div>
                <div class="person1 col-4">
                     <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
                     <div class="name_match">
-                         <p>Your matches </p>
-                    </p>  {{ percentage }}%</p>
+                         <p>{{ match.user3.username }}</p>
+                         <p>{{ match.percentage3 }}%</p>
                     <button class="button-style">Send a Pebble</button>
                     </div>
                </div>
           </div>
      </div>
+     {% empty %}
+          <p>No matches found.</p>
+     {% endfor %}
+     {% endblock %}
        
      </div>
 </div> 
