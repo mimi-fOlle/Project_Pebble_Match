@@ -33,7 +33,6 @@ Install Module packages:
 
 <h2>Migrate and runserver of this project</h2>
 
-- `$ python manage.py startapp account`
 - `$ python manage.py makemigrations`
 - `$ python manage.py migrate`
 - `$ python manage.py runserver`
