@@ -1,12 +1,15 @@
-﻿# Portfolio Project:  [Pebble Match](https://github.com/mimi-fOlle/Project_Pebble_Match)
+﻿﻿# Portfolio Project:  [Pebble Match](https://github.com/mimi-fOlle/Project_Pebble_Match)
 
 [![forthebadge](https://camo.githubusercontent.com/7998890254268d8ed476c9f66d3fa59d21dd354d2090036083c82af4cda2a0eb/68747470733a2f2f666f7274686562616467652e636f6d2f696d616765732f6261646765732f6275696c742d776974682d6c6f76652e737667)](https://forthebadge.com/)  [![forthebadge](https://camo.githubusercontent.com/eea5ac53b58abf845b429501b3e8577915df630ce4cddb1192333b01252e96da/68747470733a2f2f666f7274686562616467652e636f6d2f696d616765732f6261646765732f6d6164652d776974682d637261796f6e732e737667)](https://forthebadge.com/)
 
-The Portfolio Project is the culmination of our rigorous foundational year at Holberton School, where we showcase our proficiency as developers. Our team has designed and implemented a web-based application, "Pebble Match," demonstrating our ability to create complex software solutions.
+The Portfolio Project is the culmination of our rigorous foundational year at Holberton School, where we showcase our proficiency as developers.
+Our team has designed and implemented a web-based application, "Pebble Match," demonstrating our ability to create complex software solutions.
 
-# [](https://github.com/mimi-fOlle/Project_Pebble_Match#why-pebble-match)Why Pebble Match?
-In a world where dating apps prioritize swiping over substance, we created Pebble Match - a matchmaking web that prioritizes compatibility and connection. Our algorithm doesn't just match based on looks or interests, but rather on the tiny living habits, behaviors, and values that truly make a relationship work. We believe that love is a complex and nuanced experience that can't be reduced to a simple swipe or superficial conversation. That's why we've created a platform that allows our users to get to know each other deeply before deciding whether to take the next step. 
+# [](https://github.com/mimi-fOlle/Project_Pebble_Match#what-is-pebble-match)Why Pebble Match?
+In a world where dating apps prioritize swiping over substance, we created Pebble Match - a matchmaking web that prioritizes compatibility and connection. 
+Our algorithm doesn't just match based on looks or interests, but rather on the tiny living habits, behaviors, and values that truly make a relationship work. We believe that love is a complex and nuanced experience that can't be reduced to a simple swipe or superficial conversation. That's why we've created a platform that allows our users to get to know each other deeply before deciding whether to take the next step. 
 Join the Pebble Match community today and discover what true compatibility feels like.
+![enter image description here](https://user-images.githubusercontent.com/105150447/222259831-c002966c-93ce-414b-ad77-8fd3f3aac00b.png)
 
 ## [](https://github.com/mimi-fOlle/Project_Pebble_Match#requirements)Requirements
 
@@ -52,7 +55,7 @@ Quit the server with CONTROL-C.
 
 ```
 
-# [](https://github.com/mimi-fOlle/Project_Pebble_Match#technologies)Technologies
+# [](https://github.com/mimi-fOlle/Project_Pebble_Match#we-made-with)Technologies
 
 ## [](https://github.com/mimi-fOlle/Project_Pebble_Match#back-end)Back-end
 
