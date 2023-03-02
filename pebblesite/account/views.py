@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import render
 from pebblesite import settings
 from .forms import RegisterForm
 from django.contrib import messages
@@ -15,7 +15,7 @@ import time
 import random
 
 
-# Create your views here.
+
 
 # Home Page View
 def home(request):
@@ -88,7 +88,6 @@ def quiz(request):
         choices = Choice.objects.filter(question=questions[0])[:2] # Each questions with 2 choices
         return render(request, 'website/quiz.html', {'questions': questions, 'choices': choices})
     
-
 def match_result(request, user_id):
     user = User.objects.get(id=user_id)
     matches = Match.objects.exclude(user1=user).exclude(user2=user).exclude(user3=user).order_by('?')
@@ -102,8 +101,5 @@ def match_result(request, user_id):
     matches = [Match.objects.get(user1=user1, user2=user2, user3=user3) for (user1, user2, user3) in unique_matches]
     random.seed(time.time())
     random.shuffle(matches)
-
-
     context = {'matches': matches}
     return render(request, 'website/mymatch.html', context)
-    

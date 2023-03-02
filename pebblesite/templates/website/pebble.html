@@ -1,0 +1,29 @@
+{% extends "website/account_base.html" %}
+{% load static %}
+{% block body %}
+
+<form method="post" action="{% url 'pebble' %}" >
+     {% csrf_token %}
+
+     <div class="fullpage">          
+          <div class="logout button-style ">
+               <div>Hello</div>
+               <div> {{ request.user.username }}</div>
+          </div>
+ 
+          <div class="section2 fp-auto-height" id="section2">
+               <div class="greating_text">                  
+                    <div>
+                         {% if messages %}
+                              <ul class="messages">
+                                   {% for message in messages %}
+                                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                   {% endfor %}
+                              </ul>
+                         {% endif %}
+                    </div>                    
+               </div>
+          </div>
+     </div>
+</form>
+{% endblock %}

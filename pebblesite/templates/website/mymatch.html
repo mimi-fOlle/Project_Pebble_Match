@@ -2,45 +2,57 @@
 {% load static %}
 
 {% block body %}
- <div class="fullpage result">
-     <div class="row">
+ <div class="fullpage">
+     <div class="row"  id="result">
      {% block content %}
      {% for match in matches %}
-     <div class="container">
-          <div class="row">
-               <div class="person1 col-4" >
+          <div class="container " id="sendPebble">
+               <div class="row">
+                    <div class="person1 col-4" >
 
-                    <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
-                    <div class="name_match">
-                         <p>{{ match.user1.username }}</p>
-                         <p>{{ match.percentage1 }}%</p>
-                         <button class="button-style">Send a Pebble</button>
+                         <img src="{% static 'images/penguin_8bits_a.png' %}" alt="logo">
+                         <div class="name_match">
+                              <p>{{ match.user1.username }}</p>
+                              <p>{{ match.percentage1 }}%</p>
+                              <button class="button-style sendPebble">Send a Pebble</button>
+                         </div>
                     </div>
-               </div>
-               <div class="person1 col-4">
-                    <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
-                    <div class="name_match">
-                         <p>{{ match.user2.username }}</p>
-                         <p>{{ match.percentage2 }}%</p>
-                    <button class="button-style"> Send a Pebble</button>
+                    <div class="person1 col-4">
+                         <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
+                         <div class="name_match">
+                              <p>{{ match.user2.username }}</p>
+                              <p>{{ match.percentage2 }}%</p>
+                         <button class="button-style sendPebble">Send a Pebble</button>
+                         </div>
                     </div>
-               </div>
-               <div class="person1 col-4">
-                    <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
-                    <div class="name_match">
-                         <p>{{ match.user3.username }}</p>
-                         <p>{{ match.percentage3 }}%</p>
-                    <button class="button-style">Send a Pebble</button>
+                    <div class="person1 col-4">
+                         <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
+                         <div class="name_match">
+                              <p>{{ match.user3.username }}</p>
+                              <p>{{ match.percentage3 }}%</p>
+                         <button class="button-style sendPebble">Send a Pebble</button>
+                         </div>
                     </div>
                </div>
           </div>
-     </div>
+          <div class="container pebbleHide " id="sendPebble1">
+               <div  class="d-flex justify-content-center">
+                    <div  >
+                         <img src= "/static/images/1.png" width="305" height="312" id="myPicture" alt="some image" />
+                         <div class="name_match">
+                         {{request.user.username}} 
+                         Yes!
+                         Your pebble has been sent!
+                         </div>
+                    </div>
+
+               </div>
+
+          </div>
      {% empty %}
           <p>No matches found.</p>
      {% endfor %}
-     {% endblock %}
-       
+     {% endblock %}    
      </div>
 </div> 
-
 {% endblock %}

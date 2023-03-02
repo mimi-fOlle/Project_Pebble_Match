@@ -1,8 +1,3 @@
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function(){
      let btn_show_signup = document.getElementById('show_signup');
      let div_show_signup = document.getElementById('signup-content');
