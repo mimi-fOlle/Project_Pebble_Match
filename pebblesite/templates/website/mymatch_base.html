@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-  <title> mymatch </title>
+  <title> My match </title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="fullPage fixed full-screen backgrounds." />
@@ -45,19 +45,19 @@
       </div>
     </div>
   </header>
-  
-     <div class="fullpage">          
-          <div class="logout button-style">
-               <div>Congratulation</div>
-               <div> {{ request.user.username }}</div>
+     <div class="container">          
+          <div class="button-style" id="btn-match">
+               <div>Congratulation</div> 
+               <div>{{ request.user.username }}</div>
           </div>
     </div>
-    <div>
-          <div>
-            <!--<div>Here your destiny</div>-->
-            {% block body %}{% endblock %}
-          </div>
+    <div class="container"> 
+      {% block body %}{% endblock %}
     </div>
+    <!--<div>Here your destiny</div>-->
+
+
+
 </div>
   <footer>
     <hr>

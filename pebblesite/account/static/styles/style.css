@@ -102,8 +102,8 @@ body {
      text-align: center;
      font-family:  'CustomFont', sans-serif;
      margin-bottom: 2rem;
-    line-height: 3rem;
-    color: var(--color-text-rose);
+     line-height: 3rem;
+     color: var(--color-text-rose);
 
 }
 
@@ -133,7 +133,8 @@ body {
 }
 
 .intro-text {
-     color: white;
+     color: rgb(156, 78, 207);
+
 }
 
 .penguin_photo {
@@ -176,21 +177,14 @@ body {
  .content-to-show {
 
      position: absolute;
-
-
      font-size: 20px;
-    
      line-height: 2.5rem;
      font-family: 'Unna', serif;
      /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
      color: rgb(65, 16, 97);
-
      transition: 0.4s;
-
-
      opacity: 0;
      visibility: hidden; 
-
  }
 
 
@@ -228,20 +222,15 @@ body {
      align-items: center;
      text-align: center;
      flex-direction: column;
- 
- 
      border: 1px solid white;
      border-radius: 30px;
- 
      width: 30em;
      height: 10rem;
- 
      margin: 20px 0 20px 0;
      padding: 20px;
      background-color: #ca9fdb5e;
      box-shadow: 0em 0.4em 0.4em 0.4em #ffffff94;
- 
- }
+}
 
 .pebbleShow {
      visibility: visible;

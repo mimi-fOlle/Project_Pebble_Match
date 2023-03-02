@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block body %}
- <div class="fullpage">
-     <div class="row"  id="result">
+<div id="result">
      {% block content %}
      {% for match in matches %}
           <div class="container " id="sendPebble">
@@ -18,7 +17,7 @@
                          </div>
                     </div>
                     <div class="person1 col-4">
-                         <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
+                         <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
                          <div class="name_match">
                               <p>{{ match.user2.username }}</p>
                               <p>{{ match.percentage2 }}%</p>
@@ -26,7 +25,7 @@
                          </div>
                     </div>
                     <div class="person1 col-4">
-                         <img src="{% static 'images/penguin_8bits_c.png' %}" alt="logo">
+                         <img src="{% static 'images/penguin_8bits_b.png' %}" alt="logo">
                          <div class="name_match">
                               <p>{{ match.user3.username }}</p>
                               <p>{{ match.percentage3 }}%</p>
@@ -36,23 +35,20 @@
                </div>
           </div>
           <div class="container pebbleHide " id="sendPebble1">
-               <div  class="d-flex justify-content-center">
-                    <div  >
-                         <img src= "/static/images/1.png" width="305" height="312" id="myPicture" alt="some image" />
-                         <div class="name_match">
-                         {{request.user.username}} 
-                         Yes!
+               <div class="row d-flex justify-content-center">
+                    <div>
+                         <img src= "/static/images/1.png" id="myPicture" alt="some image" />
+                         <div class="name_match2">
+                         {{request.user.username}}<br>
+                         Yes!<br>
                          Your pebble has been sent!
                          </div>
                     </div>
-
                </div>
-
           </div>
      {% empty %}
           <p>No matches found.</p>
      {% endfor %}
      {% endblock %}    
-     </div>
-</div> 
+</div>
 {% endblock %}
