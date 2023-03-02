@@ -3,7 +3,6 @@ from django.db.models import ForeignKey
 from django.contrib.auth.models import User
 
 
-# Create your models here.
 class Account(models.Model):
     user = ForeignKey(User, on_delete=models.DO_NOTHING)
 
@@ -31,7 +30,6 @@ class UserAnswer(models.Model):
     def __str__(self):
         return str(self.choice)
 
-    
 class Match(models.Model):
     user1 = models.ForeignKey(User, related_name='matches_as_user1', on_delete=models.CASCADE)
     user2 = models.ForeignKey(User, related_name='matches_as_user2', on_delete=models.CASCADE)
@@ -40,6 +38,17 @@ class Match(models.Model):
     percentage2 = models.FloatField(default=0)
     percentage3 = models.FloatField(default=0)
     pebble_status = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    notification_sent = models.BooleanField(default=False)
     
     def __str__(self):
         return f"{self.user1.username} matched with {self.user2.username} and {self.user3.username} with a percentages {self.percentage1}%, {self.percentage2}%, {self.percentage3}%"
+
+    
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.CharField(max_length=200)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.message}"
