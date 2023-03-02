@@ -1,21 +1,18 @@
 #sendPebble1 {
-     position: absolute;
-     z-index: 1;
+     
+     z-index: 0;
 }
 #sendPebble {
-     z-index: 0;
+     z-index: 1;
+     position: absolute;
 
  }
 #result {
      position: relative;
 
  }
-div#sendPebble1 {
-     width: 50rem;
- }
-
  .name_match {
-     background-color: var(--color-box-violet);
+     background-color: rgb(248, 207, 248);
      border: 1px solid var(--color-box-violet);
      width: 20rem;
      height: 8rem;
@@ -23,11 +20,37 @@ div#sendPebble1 {
      font-size: 20px;
      text-align: center;
      font-family: var(--font-family-custom);
-     color: black
-   }
+     color: black;
+     text-align: center;
+ }
+ .name_match2 {
+     background-color: rgb(248, 207, 248);
+     border: 1px solid var(--color-box-violet);
+     width: 25rem;
+     height: 8rem;
+     border-radius: 10px;
+     font-size: 20px;
+     text-align: center;
+     font-family: var(--font-family-custom);
+     color: black;
+     text-align: center;
+ }
+ .name_match2 p {
+     margin-top: 10px;
+     text-align: center;
+ }
 img#myPicture {
      margin-top: 2rem;
      width: 400px;
      height: 400px;
      border: 1px solid black;
+ }
+ .sendPebble {
+     margin-top: 0;
+ }
+#btn-match {
+    
+     text-align: center !important;
+     height: 6rem;
+     margin-bottom: 2rem;
  }

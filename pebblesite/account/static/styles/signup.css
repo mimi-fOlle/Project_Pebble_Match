@@ -72,11 +72,13 @@
  }
 
 
- form#signup-form {
+form#signup-form {
      display: flex;
      flex-direction: column;
      justify-content: center;
-     align-items: center;}
+     align-items: center;
+}
+
 h2 {
      line-height: 1.66;
      margin: 0;
@@ -119,19 +121,13 @@ h2 {
  .form-rule{
     position: absolute;
     bottom: 0;
-
     font-size: 20px;
     font-weight: 600;
     width: 100%;
-
     display: flex;
-   
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
-    
-
  }
 /* button accept of rule */
 

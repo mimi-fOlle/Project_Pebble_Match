@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
      
    
 }, false);
-/* 
+
 window.onload = choosePic;
 
 var myPix = new Array("/static/images/1.jpg",
@@ -31,4 +31,3 @@ function choosePic() {
 	randomNum = Math.floor((Math.random() * myPix.length));
 	document.getElementById("myPicture").src = myPix[randomNum];
 } 
- */
